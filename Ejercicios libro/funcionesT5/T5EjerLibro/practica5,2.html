@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let nf=parseInt(prompt("Introduce el número de filas:"));
+        let nc=parseInt(prompt("Introduce el número de columnas:"));
+
+    function crearTabla(nfilas=10, ncolumnas=4){
+        
+        let num=0;
+
+        document.write("<table border='1'>");
+        for (let i=0;i<nfilas;i++){
+            document.write("<tr>");
+                for (let j=0;j<ncolumnas;j++){
+                    //document.write("<td>Fila "+(i+1)+" Columna "+(j+1)+"</td>");
+                    //document.write(`<td> ${num++}</td>`);// esto muestra el número secuencialmente con postincremento
+                     document.write(`<td> ${++num}</td>`)// esto muestra el número secuencialmente con preincremento
+                }
+            
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    }
+     crearTabla(nf,nc);
+     crearTabla();//llamada a la función con valores por defecto
+    </script>
+</body>
+</html>

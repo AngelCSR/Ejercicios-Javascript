@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*el método map() crea un nuevo array con los resultados de la llamada a la 
+        función indicada aplicados a cada uno de sus elementos.*/
+
+        let notas=[5,7,9,4,6];
+        //queremos crear un nuevo array con las notas dobladas
+        const dobleNotas=notas.map(function(nota){
+            return nota*2;
+        });
+        //con arrow function en ved de funcion anonima y devuelve directamente el resultado en este caso nota*2
+        const dobleNotas2=notas.map(nota=>nota*2);
+        
+        let tripeNotas=notas.map(nota=>nota*3);//triplica las notas
+
+        let alumnos=["Ana","Luis","Pedro","María"];         
+        //crear un array al que le añadimos a todos los nombres garcia al final
+        let alumnosGarcia=alumnos.map(nombre=>nombre+" Garcia");
+
+        //ctrl+k+c comenta lo seleccionado
+        //ctrl+k+u descomenta lo seleccionado
+       
+    </script>
+</body>
+</html>

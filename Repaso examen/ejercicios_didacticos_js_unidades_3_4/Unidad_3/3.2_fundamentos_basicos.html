@@ -1,0 +1,51 @@
+<!--
+Tema: Fundamentos básicos
+Objetivo: Introducción a variables, valores y operaciones simples.
+Generado: 2025-10-28T19:24:42.293464 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3.2 - Fundamentos básicos (conceptos fundamentales)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; line-height: 1.6; }
+    pre.output { background:#0b1220; color:#e6eef8; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .note { background:#f3f4f6; padding: .6rem; border-radius:.4rem; border:1px solid #e5e7eb; }
+  </style>
+</head>
+<body >
+  <a href="../index.html">← Volver al índice</a>
+  <h1>3.2 - Fundamentos básicos (conceptos fundamentales)</h1>
+  <p class="note"><strong>Guía didáctica:</strong> Sigue los comentarios en el código para entender cada paso.</p>
+  <h2>Salida en pantalla</h2>
+  <div id="page"></div>
+  <h2>Salida en consola / logs</h2>
+  <pre class="output" id="log"></pre>
+  <script>
+    // Helper sencillo para mostrar en pantalla y consola
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ') + '\n'; }
+
+
+// Paso 1: Definimos valores simples (números y cadenas)
+// Comentario extenso: Un 'valor' es cualquier dato que JavaScript entiende: números, cadenas, booleanos, etc.
+// Aquí sólo declaramos valores, sin estructuras complejas.
+let numero = 7; // número entero
+let texto = "Este es un texto"; // cadena de caracteres
+let booleano = true; // valor lógico
+
+// Paso 2: mostrar en pantalla y en la consola
+writePage("Número: " + numero);
+writePage("Texto: " + texto);
+writePage("Booleano: " + booleano);
+writeLog("Valores ->", {numero: numero, texto: texto, booleano: booleano});
+
+
+  </script>
+  <footer style="margin-top:1rem;color:#6b7280;font-size:.9rem">Parte del paquete de ejercicios didácticos — Unidades 3 y 4.</footer>
+</body>
+</html>

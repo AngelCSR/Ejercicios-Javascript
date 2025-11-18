@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*El foreach es un método que se utiliza para iterar sobre los elementos de un array. Permite ejecutar una función
+        proporcionada una vez por cada elemento del array. no tiene en cuenta las celdas vacías ["manzana",,"pera","kiwi","plátano","mango"]
+        despues de manzana no cuenta la celda vacía y salta a pera*/
+
+
+        let frutas=["manzana","pera","kiwi","plátano","mango"];
+
+        frutas.forEach(function(elemento,indice){//el primer parametro es el elemento y el segundo el indice
+            console.log(`Elemento: ${elemento}, Indice: ${indice}`);
+        });
+
+        //Usando arrow function o funcion flecha
+
+        frutas.forEach((elemento,indice)=>{//si solo hay un parametro se pueden obviar los parentesis
+            console.log(`Elemento: ${elemento}, Indice: ${indice}`);
+        });
+        // foreach con Set, también funciona con Map
+
+
+        let alumnos=new Set(["Melody","Laura","Ana","Sergio","David","Ángel"]);
+        alumnos.forEach((elemento)=>{//en los Set solo hay un parametro que es el valor
+            document.write(`Alumno/a: ${elemento}<br>`);
+        }); 
+
+        let provincias=new Map();
+        provincias.set("28","Madrid");
+        provincias.set("08","Barcelona");
+        provincias.set("41","Sevilla");
+        provincias.set("46","Valencia");
+
+        
+        provincias.forEach((valor,clave)=>{//en los Map el primer parametro es el valor y el segundo la clave
+            document.write(`Clave: ${clave}, Valor: ${valor}<br>`);
+        });
+
+    </script>
+</body>
+</html>

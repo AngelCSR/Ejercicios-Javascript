@@ -1,0 +1,35 @@
+<!--
+Ejercicio tipo examen
+Título: 4.1 - Strings y concatenación
+Enunciado: Combina nombre y apellido de un estudiante y muestra longitud de la cadena resultante.
+Generado: 2025-10-28T19:33:29.048624 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>4.1 - Strings y concatenación</title>
+</head>
+<body>
+  <h1>4.1 - Strings y concatenación</h1>
+  <p><strong>Enunciado:</strong> Combina nombre y apellido de un estudiante y muestra longitud de la cadena resultante.</p>
+  <div id="page"></div>
+  <pre id="log"></pre>
+  <script>
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.join(' ') + '\n'; }
+
+
+let nombre = "Juan";
+let apellido = "Pérez";
+let completo = nombre + " " + apellido;
+writePage("Nombre completo: " + completo);
+writePage("Longitud total: " + completo.length);
+writeLog("Nombre completo:", completo, "Longitud:", completo.length);
+
+
+  </script>
+</body>
+</html>

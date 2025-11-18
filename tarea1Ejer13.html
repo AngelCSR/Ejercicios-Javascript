@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+       
+        /* Realiza un programa que sume los 10 números siguientes a uno positivo
+        introducido por teclado. Se debe comprobar primero que el número introducido
+        es positivo. */
+
+        let num = Number(prompt("Introduce un numero"));
+        let l = "";
+
+        if (num >= 0) {
+            let suma = 0;
+            for (let i = num + 1; i <= num + 10; i++) {
+                suma += i;
+                l += `Suma del siguiente numero: ${i} , Suma = ${suma}\n`;
+            }
+            l += `\nLa suma de los 10 números siguientes a ${num} es: ${suma}`;
+            alert(l);
+        } else {
+            alert("Introduce un numero positivo");
+        }
+    </script>
+
+   
+</body>
+</html>

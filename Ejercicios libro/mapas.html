@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*Los mapas permiten, en JavaScript, crear estructuras de tipo clave-valor, en las cuales las cla­
+        ves no se pueden repetir y tienen asociado el valor. Los mapas son también parte del estándar
+        ES2015.
+        Tanto las claves como los valores pueden ser de cualquier tipo. En un mismo mapa no puede
+        haber dos elementos con la misma clave, pero sí pueden repetir valor.*/
+
+        //crear un mapa
+        let provincias = new Map();
+        console.log("Creamos un mapa vacío");
+        console.log(provincias);
+        //añadir elementos al mapa
+        console.log("Añado 4 elementos al mapa (Madrid, Palencia, Cuenca, Valencia)");
+        provincias.set(1, "Madrid");
+        provincias.set(34, "Palencia");
+        provincias.set(16, "Cuenca");
+        provincias.set(46, "Valencia");
+        console.log("Muestro el mapa");
+        console.log(provincias);
+        //saber cuantos elementos tiene el mapa
+        console.log("El mapa tiene "+provincias.size+" elementos");
+        //saber si un elemento existe en el mapa
+        console.log("Saber si existe la clave 34 y 50 en el mapa (provincias.has(34) y provincias.has(50))");
+        console.log(provincias.has(34));
+        console.log(provincias.has(50));
+        //eliminar un elemento del mapa
+        console.log("Elimino el elemento con clave 16 del mapa (provincias.delete(16))");
+        provincias.delete(16);
+        console.log(provincias);
+        console.log("Saber si existe la clave 16 en el mapa (provincias.has(16))");
+        console.log(provincias.has(16));
+        //recorrer los elementos del mapa
+        console.log("Recorrer los elementos del mapa (for..of)");
+        for(let [clave,valor] of provincias){
+            console.log(" Clave: "+clave+" - "+valor+"-> Valor");
+        }
+        //obtener solo las claves del mapa
+        console.log("Obtener solo las claves del mapa (provincias.keys())");
+        let clavesMapa=provincias.keys();
+        console.log(clavesMapa);
+        for(let clave of clavesMapa){
+            console.log(clave);
+        }
+        //obtener solo los valores del mapa
+        console.log("Obtener solo los valores del mapa (provincias.values())");
+        let valoresMapa=provincias.values();
+        console.log(valoresMapa);
+        for(let valor of valoresMapa){
+            console.log(valor);
+        }//obtener un valor a partir de su clave
+        console.log("Obtener un valor a partir de su clave (provincias.get(34))");
+        console.log(provincias.get(34));
+
+        //recorrer los elementos del mapa con forEach
+        console.log("Recorrer los elementos del mapa (forEach)");
+        provincias.forEach((valor,clave)=>console.log(clave+" - "+valor));
+        /*obtener objetos iterables del map
+         Un objeto iterable es un tipo de objeto semejante a un array, ya que es una colección de valores
+        que se pueden recorrer mediante bucles de tipo for...of. Sin embargo, los objetos iterables no son
+        realmente arrays y, por lo tanto, se manipulan de forma distinta.
+        Los mapas permite crear objetos iterables que contienen solo las claves y objetos iterables solo
+        con los valores. El método keys obtiene las claves y el método valúes obtiene los valores.
+        Ejemplo:*/
+        console.log("Obtener objetos iterables del mapa");
+        let iteradorClaves=provincias.keys();
+        console.log(iteradorClaves);
+        for(let clave of iteradorClaves){
+            console.log(clave);
+        }
+        let iteradorValores=provincias.values();
+        console.log(iteradorValores);
+        for(let valor of iteradorValores){
+            console.log(valor);
+        }
+        let iteradorElementos=provincias.entries();
+        console.log(iteradorElementos);
+        for(let elemento of iteradorElementos){
+            console.log(elemento[0]+" - "+elemento[1]);
+        }
+
+
+        //convertir un mapa en un array
+        console.log("Convertir un mapa en un Array (Array.from(provincias))");
+        let arrayDesdeMapa=Array.from(provincias);
+        console.log(...provincias);
+        console.log(arrayDesdeMapa);
+        console.log("Convertir las claves de un mapa en un Array (Array.from(provincias.keys()))");
+        let arrayClaves=Array.from(provincias.keys());
+        console.log(arrayClaves);
+        console.log("Convertir los valores de un mapa en un Array (Array.from(provincias.values()))");
+        let arrayValores=Array.from(provincias.values());
+        console.log(arrayValores);
+        //convertir un Array en un Mapa
+        console.log("Convertir un Array en un mapa (new Set(arrayDesdeSet))");
+        let mapaDesdeArray=new Map(arrayDesdeMapa);
+        console.log(mapaDesdeArray);
+        //unir dos mapas
+        console.log("Uno los dos mapas (provincias y mapaDesdeArray)");
+        let unionMapa=new Map([...provincias,...mapaDesdeArray]);
+        console.log(unionMapa); 
+        //usar un array para crear un mapa
+        console.log("Crear un mapa a partir de un array de arrays");
+        let mapaDesdeArray2=new Map([["ES","España"],["FR","Francia"],["IT","Italia"]]);
+        console.log(mapaDesdeArray2);
+        //eliminar todos los elementos del mapa
+        console.log("Elimino todos los elementos del mapa (provincias.clear())");
+        provincias.clear();
+        console.log(provincias); //mapa vacío
+        console.log(provincias.size); //0
+
+    </script>
+</body>
+</html>

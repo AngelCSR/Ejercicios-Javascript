@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+/*
+Función para detectar anagramas
+• Crea una función a la que se le pasen una serie de textos (mínimo dos) y detecte si los mismos
+son anagramas o no.
+• Un anagrama es una palabra que resulta de trasponer las letras de otra: por ejemplo ESTANCO
+y ACENTOS.
+• La función devuelve verdadero si todas las palabras pasadas son anagramas de las mismas
+letras.*/
+
+
+
+
+        //let palabra1=prompt("Introduce una palabra")
+        //let palabra2=prompt("Introduce una palabra")
+        let [palabra1,palabra2]=["ESTaNCO","ACENTOS"]
+        let anagrama=true
+        palabra1=palabra1.toLowerCase()
+        palabra2=palabra2.toLowerCase()
+        for (letra of palabra1){
+            if (!palabra2.includes(letra)){
+                
+                anagrama=false
+                break
+            }
+        }
+
+        if (anagrama/*==true al ser boleano no hace falta*/ && palabra1.length==palabra2.length){
+            alert("Las palabras "+palabra1+" y "+palabra2+" son anagramas")
+        } else{
+            alert("No son anagramas ")
+        }
+    </script>
+</body>
+</html>

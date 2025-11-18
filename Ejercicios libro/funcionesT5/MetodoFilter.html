@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //el método filter() crea un nuevo array con todos los elementos que cumplan la condición
+        //implementada por la función dada.
+        let array=[5,12,8,130,44,32,3,7,25];
+        //queremos crear un nuevo array con los elementos mayores a 20
+
+        let arrayFiltrado=array.filter(function(numero){
+            return numero>20;//devuelve true o false, si es true se añade al nuevo array
+        });
+        //con arrow function
+        let arrayFiltrado2=array.filter(elemento=>elemento>30);
+
+        // document.write("Array original: "+array+"<br>");
+        // document.write("Array filtrado (mayores a 20): "+arrayFiltrado+"<br>");
+        // document.write("Array filtrado 2 (mayores a 30): "+arrayFiltrado2+"<br>");
+
+        let alumnos=["Melody","Laura","Ana","Sergio","David","Ángel"];
+        //filtrar los alumnos que su nombre sea menor a 5 letras
+
+        let alumnosFiltrados=alumnos.filter(alumno=>alumno.length<5);
+
+        //document.write("Alumnos con nombre menor a 5 letras: "+alumnosFiltrados+"<br>");
+
+        //filtrar el nombre mas corto de los alumnos con filter
+        let nombreMasCorto=alumnos.filter(function(alumno){
+            return alumno.length===Math.min(...alumnos.map(a=>a.length));//... es el operador spread que convierte el array en una lista de argumentos
+        }); 
+        //con arrow function
+
+        let nombreMasCorto2=alumnos.filter(alumno=>alumno.length===Math.min(...alumnos.map(a=>a.length)));//... es el operador spread que convierte el array en una lista de argumentos
+
+
+        let numeros=[1,2,3,4,5,6,7,8,9,10];
+        //filtrar los numeros pares
+        let numerosPares=numeros.filter(numero=>numero%2==0);
+        document.write("Números pares: "+numerosPares+"<br>");
+        //filtrar los numeros impares
+        let numerosImpares=numeros.filter(numero=>numero%2!==0);
+        document.write("Números impares: "+numerosImpares+"<br>");  
+        // Filtrar los números mayores que 5
+        let numerosMayoresQueCinco = numeros.filter(numero => numero > 5);
+        document.write("Números mayores que 5: " + numerosMayoresQueCinco + "<br>");
+        
+    </script>
+</body>
+</html>

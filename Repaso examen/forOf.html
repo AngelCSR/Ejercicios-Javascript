@@ -1,0 +1,27 @@
+<!--
+Tema: for...of con arrays de objetos
+Objetivo: Mostrar cómo recorrer objetos dentro de un array y acceder a sus propiedades.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>For...of con Objetos</title></head>
+<body>
+  <h2>for...of con Arrays de Objetos</h2>
+  <script>
+    let alumnos = [
+      {nombre: "Ana", nota: 9},
+      {nombre: "Luis", nota: 6},
+      {nombre: "María", nota: 4}
+    ];
+
+    // Recorremos con for...of, más legible para colecciones
+    for (let alumno of alumnos) {
+      if (alumno.nota >= 6) {
+        document.write(alumno.nombre + " aprobó con " + alumno.nota + "<br>");
+      } else {
+        document.write(alumno.nombre + " suspendió con " + alumno.nota + "<br>");
+      }
+    }
+  </script>
+</body>
+</html>

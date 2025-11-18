@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Algoritmo que pregunte primero si se quiere calcular el área de un 
+        triángulo o la de un círculo. Si se contesta que se quiere calcular el
+         área de un triángulo (escribiendo T o t), el programa tiene que pedir 
+         entonces la base y la altura y escribir el área. Si se contesta que se 
+         quiere calcular el área de un círculo (escribiendo C o c), el programa 
+         tiene que pedir entonces el radio y escribir el área.*/
+
+
+        let pregunta= prompt ("Quieres calcular el area de un triangulo o un circulo? Triangulo(T o t) Circulo (C o c)");
+        if(pregunta=="T" || pregunta=="t"){
+            let base= Number(prompt("Introduce la base: "));
+            let altura= Number(prompt("Introducel da altura: "));
+            let area= base*altura/2;
+            alert(`El area del triangulo es: ${area.toFixed(2)}`);
+        }
+        if(pregunta=="C" || pregunta=="c"){
+            let radio= Number(prompt("Dime el radio del circulo: "));
+            areac=3.1415*radio**2;
+            alert(`El area del circulos es ${areac.toFixed(2)}`);
+        }
+    
+    </script>
+</body>
+</html>

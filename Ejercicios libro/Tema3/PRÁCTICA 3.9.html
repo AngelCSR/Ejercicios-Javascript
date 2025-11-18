@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+
+    <script>
+        let factorial=parseInt(prompt("Introduce un numero positivo para calcular su factorial: "));
+
+        if(isNaN(factorial) || factorial<2){
+            alert("El valor introducido no es correcto");
+            
+        }else{
+        for(let i=factorial-1;i>0;i--){
+            factorial*=i;
+        }
+        alert("El factorial es: "+factorial);
+        /**
+        Tambien se puede hacer asi:
+        var result=1;
+        for(factorial;factorial>1;factorial--){
+            result*=factorial;
+        }
+        alert("El factorial es: "+result);  
+        */
+    }
+
+    </script>
+</body>
+</html>

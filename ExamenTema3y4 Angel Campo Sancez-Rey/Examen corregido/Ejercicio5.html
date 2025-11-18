@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Ejercicio que piede al usuario un numero y muestra todos los numeros primos menores o iguales a ese numero sin usar funciones*/
+        let num=parseInt(prompt("Introduce un numero: "))
+        for(let i=2;i<=num;i++){
+            let primo=true
+            //el siguiente bucle recorre los numeros desde 2 hasta i
+            for(let j=2;j<i;j++){
+                let resto=i%j
+                if(resto==0){
+                    primo=false//no es primo
+                    j=i //para salir del bucle
+                }
+            }//fin del bucle j si al terminar el bucle primo sigue siendo true es que el numero i es primo
+            if(primo==true){
+                document.write(i+" es primo<br>")
+            }
+            
+        }
+    </script>
+</body>
+</html>

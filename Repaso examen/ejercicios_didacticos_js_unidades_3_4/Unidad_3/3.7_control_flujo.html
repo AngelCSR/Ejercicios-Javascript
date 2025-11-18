@@ -1,0 +1,93 @@
+<!--
+Tema: Control de flujo
+Objetivo: Mostrar ejemplos básicos de if y los distintos bucles.
+Generado: 2025-10-28T19:24:42.293975 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3.7 - Control del flujo del programa (if, while, do...while, for, bucles anidados, break/continue)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; line-height: 1.6; }
+    pre.output { background:#0b1220; color:#e6eef8; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .note { background:#f3f4f6; padding: .6rem; border-radius:.4rem; border:1px solid #e5e7eb; }
+  </style>
+</head>
+<body >
+  <a href="../index.html">← Volver al índice</a>
+  <h1>3.7 - Control del flujo del programa (if, while, do...while, for, bucles anidados, break/continue)</h1>
+  <p class="note"><strong>Guía didáctica:</strong> Sigue los comentarios en el código para entender cada paso.</p>
+  <h2>Salida en pantalla</h2>
+  <div id="page"></div>
+  <h2>Salida en consola / logs</h2>
+  <pre class="output" id="log"></pre>
+  <script>
+    // Helper sencillo para mostrar en pantalla y consola
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ') + '\n'; }
+
+
+// IF básico
+let edad = 17;
+if (edad >= 18) {
+  writePage("Eres mayor de edad");
+  writeLog("IF: mayor de edad");
+} else {
+  writePage("Eres menor de edad");
+  writeLog("IF: menor de edad");
+}
+
+// WHILE: repetición con condición al inicio
+let c = 1;
+writePage("While loop:");
+while (c <= 3) {
+  writePage("  contador = " + c);
+  writeLog("while contador:", c);
+  c++;
+}
+
+// DO...WHILE: ejecuta al menos una vez
+let d = 1;
+writePage("Do...while loop (se ejecuta al menos una vez):");
+do {
+  writePage("  do contador = " + d);
+  writeLog("do...while contador:", d);
+  d++;
+} while (d <= 2);
+
+// FOR: bucle con índice
+writePage("For loop:");
+for (let i = 1; i <= 4; i++) {
+  writePage("  iteración = " + i);
+  writeLog("for i:", i);
+  // Ejemplo de continue y break en contextos sencillos
+  if (i === 3) {
+    writePage("  (evento) i vale 3 -> usamos continue para saltar el resto de esta iteración");
+    writeLog("for continue en i=3");
+    continue;
+  }
+  if (i === 4) {
+    writePage("  (evento) i vale 4 -> usamos break para salir del bucle");
+    writeLog("for break en i=4");
+    break;
+  }
+}
+
+// Bucles anidados: ejemplo sencillo de 2 niveles
+writePage("Bucles anidados:");
+for (let a = 1; a <= 2; a++) {
+  for (let b = 1; b <= 2; b++) {
+    writePage("  a=" + a + ", b=" + b);
+    writeLog("nested", a, b);
+  }
+}
+
+
+  </script>
+  <footer style="margin-top:1rem;color:#6b7280;font-size:.9rem">Parte del paquete de ejercicios didácticos — Unidades 3 y 4.</footer>
+</body>
+</html>

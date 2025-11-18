@@ -1,0 +1,63 @@
+<!--
+Tema: Variables y tipos de datos primitivos
+Objetivo: Mostrar var, let, const y tipos primitivos básicos (número, cadena, boolean, null, undefined).
+Generado: 2025-10-28T19:24:42.293636 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3.3 - Valores, declaración de variables y tipos de datos primitivos</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; line-height: 1.6; }
+    pre.output { background:#0b1220; color:#e6eef8; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .note { background:#f3f4f6; padding: .6rem; border-radius:.4rem; border:1px solid #e5e7eb; }
+  </style>
+</head>
+<body >
+  <a href="../index.html">← Volver al índice</a>
+  <h1>3.3 - Valores, declaración de variables y tipos de datos primitivos</h1>
+  <p class="note"><strong>Guía didáctica:</strong> Sigue los comentarios en el código para entender cada paso.</p>
+  <h2>Salida en pantalla</h2>
+  <div id="page"></div>
+  <h2>Salida en consola / logs</h2>
+  <pre class="output" id="log"></pre>
+  <script>
+    // Helper sencillo para mostrar en pantalla y consola
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ') + '\n'; }
+
+
+// Paso 1: Declarar variables con var, let y const explicando diferencias (básico)
+// 'var' existe históricamente en JavaScript; puede tener alcance global o de función.
+var antiguo = "uso histórico, evita su uso en código moderno cuando sea posible";
+
+// 'let' se usa para variables cuyo valor puede cambiar y tiene alcance de bloque.
+let contador = 1; // ejemplo de variable cambiante
+
+// 'const' se usa para valores constantes que no deben reasignarse.
+const PI = 3.1416; // convención: mayúsculas para constantes
+
+// Paso 2: Tipos primitivos simples
+let cadena = "Hola";
+let numero = 42;
+let booleano = false;
+let indefinido; // variable declarada pero sin asignar -> undefined
+let nulo = null; // valor nulo explícito
+
+// Mostrar en pantalla y consola con descripciones
+writePage("var (histórico): " + antiguo);
+writePage("let contador: " + contador);
+writePage("const PI: " + PI);
+writePage("cadena, numero, booleano, indefinido, nulo:");
+writePage(cadena + ", " + numero + ", " + booleano + ", " + indefinido + ", " + nulo);
+writeLog("Tipos primitivos:", {cadena, numero, booleano, indefinido, nulo});
+
+
+  </script>
+  <footer style="margin-top:1rem;color:#6b7280;font-size:.9rem">Parte del paquete de ejercicios didácticos — Unidades 3 y 4.</footer>
+</body>
+</html>

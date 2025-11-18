@@ -1,0 +1,71 @@
+<!--
+Tema: Operadores
+Objetivo: Demostrar operaciones básicas y comparaciones sin entrar en operadores avanzados.
+Generado: 2025-10-28T19:24:42.293743 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3.4 - Operadores (aritméticos, relacionales y lógicos básicos)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; line-height: 1.6; }
+    pre.output { background:#0b1220; color:#e6eef8; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .note { background:#f3f4f6; padding: .6rem; border-radius:.4rem; border:1px solid #e5e7eb; }
+  </style>
+</head>
+<body >
+  <a href="../index.html">← Volver al índice</a>
+  <h1>3.4 - Operadores (aritméticos, relacionales y lógicos básicos)</h1>
+  <p class="note"><strong>Guía didáctica:</strong> Sigue los comentarios en el código para entender cada paso.</p>
+  <h2>Salida en pantalla</h2>
+  <div id="page"></div>
+  <h2>Salida en consola / logs</h2>
+  <pre class="output" id="log"></pre>
+  <script>
+    // Helper sencillo para mostrar en pantalla y consola
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ') + '\n'; }
+
+
+// Aritméticos básicos
+let a = 8;
+let b = 3;
+// Suma y resta
+let suma = a + b; // suma de dos números
+let resta = a - b; // resta
+// Multiplicación y división
+let mult = a * b;
+let div = a / b;
+// Módulo (resto)
+let mod = a % b;
+
+// Relacionales (comparaciones)
+// Nota: usar === para comparar valor y tipo
+let igualDebil = (5 == "5"); // true (convierte tipos)
+let igualFuerte = (5 === "5"); // false (no convierte tipos)
+let mayor = a > b;
+
+// Lógicos simples (AND, OR, NOT)
+let verdad = true;
+let falso = false;
+let andRes = verdad && falso; // true sólo si ambos son true
+let orRes = verdad || falso; // true si alguno es true
+let notRes = !verdad; // invierte el valor
+
+// Mostrar en página y consola
+writePage("Operadores aritméticos: suma=" + suma + " resta=" + resta + " mult=" + mult + " div=" + div + " mod=" + mod);
+writePage("Comparaciones: 5==5 -> " + igualDebil + ", 5===5 -> " + igualFuerte + ", 8>3 -> " + mayor);
+writePage("Lógicos: AND=" + andRes + ", OR=" + orRes + ", NOT=" + notRes);
+writeLog("Aritméticos:", {suma, resta, mult, div, mod});
+writeLog("Comparaciones:", {igualDebil, igualFuerte, mayor});
+writeLog("Lógicos:", {andRes, orRes, notRes});
+
+
+  </script>
+  <footer style="margin-top:1rem;color:#6b7280;font-size:.9rem">Parte del paquete de ejercicios didácticos — Unidades 3 y 4.</footer>
+</body>
+</html>

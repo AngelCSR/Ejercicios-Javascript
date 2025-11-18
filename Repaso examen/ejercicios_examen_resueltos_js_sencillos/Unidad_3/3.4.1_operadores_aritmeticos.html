@@ -1,0 +1,49 @@
+<!--
+Ejercicio tipo examen
+Título: 3.4.1 - Operadores aritméticos
+Enunciado: Calcula suma, resta, multiplicación y división de 12 y 4, mostrando resultados en pantalla y consola.
+Generado: 2025-10-28T19:33:29.047817 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.4.1 - Operadores aritméticos</title>
+</head>
+<body>
+  <h1>3.4.1 - Operadores aritméticos</h1>
+  <p><strong>Enunciado:</strong> Calcula suma, resta, multiplicación y división de 12 y 4, mostrando resultados en pantalla y consola.</p>
+  <div id="page"></div>
+  <pre id="log"></pre>
+  <script>
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.join(' ') + '\n'; }
+
+
+// Paso 1: declarar variables
+let a = 12;
+let b = 4;
+
+// Paso 2: operaciones
+let suma = a + b;
+let resta = a - b;
+let producto = a * b;
+let division = a / b;
+
+// Paso 3: mostrar resultados
+writePage("Suma: " + suma);
+writePage("Resta: " + resta);
+writePage("Producto: " + producto);
+writePage("División: " + division);
+
+writeLog("Suma:", suma);
+writeLog("Resta:", resta);
+writeLog("Producto:", producto);
+writeLog("División:", division);
+
+
+  </script>
+</body>
+</html>

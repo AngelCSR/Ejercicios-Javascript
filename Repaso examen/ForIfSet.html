@@ -1,0 +1,23 @@
+<!--
+Tema: for + if + Set
+Objetivo: Crear un Set con valores únicos y recorrerlo con for...of mostrando los pares.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>For con Set</title></head>
+<body>
+  <h2>For con Set</h2>
+  <script>
+    let numeros = new Set([1, 2, 2, 3, 4, 4, 5]);
+
+    // for...of permite recorrer fácilmente los valores del Set
+    for (let num of numeros) {
+      if (num % 2 === 0) {
+        document.write(num + " es par<br>");
+      } else {
+        document.write(num + " es impar<br>");
+      }
+    }
+  </script>
+</body>
+</html>

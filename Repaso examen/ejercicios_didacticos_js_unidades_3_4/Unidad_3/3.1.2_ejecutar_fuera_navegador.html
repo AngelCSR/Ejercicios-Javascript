@@ -1,0 +1,44 @@
+<!--
+Tema: Ejecución fuera del navegador
+Objetivo: Explicar cómo se ejecutaría en Node.js (sólo explicación textual y logs).
+Generado: 2025-10-28T19:24:42.292918 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3.1.2 - Ejecutar JavaScript fuera del navegador (ejemplo explicativo)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; line-height: 1.6; }
+    pre.output { background:#0b1220; color:#e6eef8; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .note { background:#f3f4f6; padding: .6rem; border-radius:.4rem; border:1px solid #e5e7eb; }
+  </style>
+</head>
+<body >
+  <a href="../index.html">← Volver al índice</a>
+  <h1>3.1.2 - Ejecutar JavaScript fuera del navegador (ejemplo explicativo)</h1>
+  <p class="note"><strong>Guía didáctica:</strong> Sigue los comentarios en el código para entender cada paso.</p>
+  <h2>Salida en pantalla</h2>
+  <div id="page"></div>
+  <h2>Salida en consola / logs</h2>
+  <pre class="output" id="log"></pre>
+  <script>
+    // Helper sencillo para mostrar en pantalla y consola
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ') + '\n'; }
+
+
+// En esta página no podemos ejecutar Node.js, pero explicamos con texto y logs cómo sería.
+writePage("En un entorno Node.js ejecutarías un archivo .js con 'node archivo.js'. Aquí mostramos instrucciones:");
+writePage("1) Crea un archivo llamado app.js con: console.log(\"Hola desde Node.js\");");
+writePage("2) Ejecuta en terminal: node app.js");
+writeLog("Explicación: Node.js ejecuta JavaScript fuera del navegador. Aquí sólo mostramos la explicación.");
+
+
+  </script>
+  <footer style="margin-top:1rem;color:#6b7280;font-size:.9rem">Parte del paquete de ejercicios didácticos — Unidades 3 y 4.</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*programa que pida una palabra y le valla cambiando la primera letra por la ultima y la ultima por la primera hasta que vuelva a ser la palabra original*/
+        let palabra =prompt("Escribe una palabra");
+
+        let texto=palabra.split("");
+
+        for(let i in palabra){
+            document.write(texto.join("")+" >")
+            let primerElemento=texto.shift()
+            texto.push(primerElemento)
+            
+        }   
+        document.write(palabra);
+    </script>
+</body>
+</html>

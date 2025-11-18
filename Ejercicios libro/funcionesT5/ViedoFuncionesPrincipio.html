@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=19
+
+        function f(y){
+            x++
+            console.log(x);
+        }
+        f(x);
+        console.log(x)
+/***********************************************************************/
+        var array=[1,2,3,4,5];
+        function g(a){
+            a[0]=9;
+        }
+        console.log(array[0]);
+        g(array);
+        console.log(array[0]);
+/*
+ARGUMENTOS CON VALORES POR DEFECTO
+En JavaScript, los parámetros pueden tener un valor predeterminado. Eso convierte a dicho
+parámetro en opcional: es decir, podremos enviar o no valores para ese parámetro.DESARROLLO WEB EN ENTORNO CLIENTE
+174
+Ejemplo:
+/**/
+        function saludo(texto="Hola"){
+
+        console.log(texto);
+        }
+    saludo();
+    saludo("Buenos días");        
+    /*NÚMERO VARIABLE DE PARÁMETROS*/
+
+        function media(x,y){
+            return (x+y)/2;
+        }
+        console.log(media(10,20));
+    console.log(media(10,20,30))
+
+        function f(x,y,...mas){
+            console.log(` x=${x} y=${y} mas=${mas}`);
+        }
+    f(10,20);
+    f(10,20,30) ;
+    f(10,20,30,40);
+
+         function media2(... numeros){;
+            let acu=0;
+            for(let n of numeros){
+            acu+=n;
+                }
+            return acu/numeros.length
+         }
+    console.log(media2(10,20));
+    console.log(media2(10,20,30));
+    console.log(media2(10,20,30,40));
+    console.log(media2(10,20,30,40,50));
+
+    /**********Recursividad*********/
+        function factorial(n){
+            if(n<=1) return 1;
+            else return n*factorial(n-1);
+        }
+     console.log(factorial(4))
+
+        function fibonacci(n){
+            if(n==0) return 0;
+            else if (n==1) return 1;
+            else return fibonacci(n-1)+fibonacci(n-2);
+        }
+        let num=parseInt(prompt("Numero de numeros fibonacci que quieres"))
+        let i=0;
+        while(i<=num){
+            console.log(fibonacci(i))
+            i++
+        }
+    /*********************Funciones CALLBACK*****************************/
+        function escribe(dato,funcion){
+            funcion(dato);
+        }
+        escribe("Hola",console.log);//pasamos la funcion console.log como parametro
+
+        //short con funcion callbac
+
+        let array1=["Hola","adios","silla","ñu"];
+        /*array1.sort(function(a, b) {
+            return a.localeCompare(b);
+        });*/
+          array1.sort((a, b)=>a.localeCompare(b))
+        console.log(array1);
+
+    </script>
+</body>
+</html>

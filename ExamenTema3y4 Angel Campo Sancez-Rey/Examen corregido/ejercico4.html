@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*pide 4 digitos diferentes por pantalla y devuelve todos los numeros posibles con 4 cifrass*/
+        let n1=prompt("Introduce un numero: ")
+        let n2=prompt("Introduce un numero:  ")
+        let n3=prompt("Introduce un numero: ")
+        let n4=prompt("Introduce un numero: ")
+
+
+        for(let i=0;i<10000;i++){
+            let numero=String(i)
+            if(numero.length==1){
+                numero="000"+numero
+            } else if (numero.length==2){
+                numero="00"+numero
+            } else if (numero.length==3){
+                numero="0"+numero
+            }
+            //a partir de aqui numero tiene 4 digitos
+            if(numero.includes(n1) && numero.includes(n2) && numero.includes(n3) && numero.includes(n4)){
+                document.write( numero+" ")
+            }
+           
+        }
+        /*
+         for(let i=0;i<10000;i++){
+            let numero=String(i).padStart(4,"0")
+            if(numero.includes(n1) && numero.includes(n2) && numero.includes(n3) && numero.includes(n4)){
+                document.write(numero+"<br>")       
+            }
+        }
+        
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let palabra1=prompt("Introduce una palabra: ")
+        let palabra2=prompt("Introduce una palabra: ")
+        let palabra3=prompt("Introduce una palabra: ")
+       
+        let set1=new Set(palabra1)
+        let set2=new Set(palabra2)
+        let set3=new Set(palabra3)
+        // este set contiene las letras sin repeticion entre las 3 palabras
+        let setLetrasUnicas=new Set(palabra1+palabra2+palabra3)
+        //console.log(setLetrasUnicas)
+        //obtener los caracteres del abecedario que no aparecen en ninguna palabra
+        //set con todas las letras del abcedario
+        let alfabeto= new Set("abcdefghijklmnñopqrstuvwyz")
+        //del set anterior quito cada una de las letras que hay en el set letrasUnicas
+        for (let letra of setLetrasUnicas){
+            alfabeto.delete(letra)
+        }
+        //console.log(alfabeto)
+
+        //busco las letras en comun de las 3 palabras
+        //recorro palabra1 y comprubo si vada letra esta en palabra2y3
+        let letrasComunes= new Set()
+        for(let letra of set1){
+            if(set2.has(letra) && set3.has(letra)){
+                letrasComunes.add(letra)
+            }
+        }
+        document.write(`${palabra1} ${palabra2} ${palabra3}<br>`)
+        document.write(`Los caracteres comunes son ${[...letrasComunes]}<br>`)
+         document.write(`Los caracteres unicos son ${[...setLetrasUnicas]}<br>`)
+          document.write(`Los caracteres a-z no usados  son ${[...alfabeto]}<br>`)
+        
+
+    </script>
+</body>
+</html>

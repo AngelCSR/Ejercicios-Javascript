@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cant=parseInt(prompt("Cuantos numero fibonacci quieres"))
+        //F(n)=f(n-1)+f(n-2)
+        let a = 0;  // F(0)
+        let b = 1;  // F(1)
+        let l = "";
+
+        for (let i = 0; i < cant; i++) {
+            l += `${a} , `;       // el numero actual
+            let siguiente = a + b;    // siguiente numero Fibonacci 
+            a = b;               // 
+            b = siguiente;
+        }
+
+        alert(l);
+
+    </script>
+</body>
+</html>

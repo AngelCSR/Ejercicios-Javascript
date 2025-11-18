@@ -1,0 +1,40 @@
+<!--
+Ejercicio tipo examen
+Título: 4.5/4.6 - Sets y Maps combinados
+Enunciado: Crear un Set con números repetidos y un Map con clave-valor de nombres y edades, mostrar resultados.
+Generado: 2025-10-28T19:33:29.049081 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>4.5/4.6 - Sets y Maps combinados</title>
+</head>
+<body>
+  <h1>4.5/4.6 - Sets y Maps combinados</h1>
+  <p><strong>Enunciado:</strong> Crear un Set con números repetidos y un Map con clave-valor de nombres y edades, mostrar resultados.</p>
+  <div id="page"></div>
+  <pre id="log"></pre>
+  <script>
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.join(' ') + '\n'; }
+
+
+let conjunto = new Set([1,2,2,3,3,4]);
+writePage("Set sin duplicados: " + Array.from(conjunto));
+writeLog("Set:", Array.from(conjunto));
+
+let mapa = new Map();
+mapa.set("Ana", 25);
+mapa.set("Luis", 30);
+mapa.forEach((edad,nombre)=>{
+  writePage("Nombre: " + nombre + ", Edad: " + edad);
+  writeLog("Map entry:", nombre, edad);
+});
+
+
+  </script>
+</body>
+</html>

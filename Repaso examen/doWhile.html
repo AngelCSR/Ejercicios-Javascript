@@ -1,0 +1,22 @@
+<!--
+Tema: Uso del bucle do...while con cadenas
+Objetivo: Mostrar cada carácter de una palabra hasta recorrerla completamente.
+Conceptos: longitud, acceso por índice, ejecución mínima garantizada.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Do While con Strings</title></head>
+<body>
+  <h2>Bucle do...while con Strings</h2>
+  <script>
+    let palabra = "JavaScript";
+    let i = 0;
+
+    do {
+      console.log("Letra:", palabra[i]);
+      document.write("Letra: " + palabra[i] + "<br>");
+      i++;
+    } while (i < palabra.length);
+  </script>
+</body>
+</html>

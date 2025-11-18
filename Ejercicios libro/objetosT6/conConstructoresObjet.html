@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Función constructora
+        function Punto(coordX, coordY) {
+            this.x = coordX;
+            this.y = coordY;
+            this.mostrarCoordenadas = () => `(${this.x},${this.y})\``; //método que muestra las coordenadas
+            //otra forma de definir el método
+            /*this.mostrarCoordenadas = function() {
+                return `(${this.x},${this.y})`; 
+                }
+            
+                */
+             }
+            let a = new Punto(10, 20);
+            let b = new Punto(-3, 6);
+            console.log(a.mostrarCoordenadas());//El resultado es: (10,20)
+            console.log(b.mostrarCoordenadas());//El resultado es: (-3,6)*/
+      
+    </script>
+</body>
+
+</html>

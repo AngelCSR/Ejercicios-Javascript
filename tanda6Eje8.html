@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Algoritmo que pida tres números y que escriba si son los tres iguales, 
+        si hay dos iguales o si son los tres distintos.*/ 
+        let num1= Number(prompt("Introcuce un numero"))
+        let num2= Number(prompt("Introcuce un numero"))
+        let num3= Number(prompt("Introcuce un numero"))
+
+        if(num1==num2 && num2==num3){
+             alert("Los tres numeros son iguales");
+        } else if(num1==num2 ||num2==num3 || num1==num3){
+            alert("Hay dos numeros iguales");
+        } else{
+            alert("Los tres numeros son diferentes");
+        }
+    </script>
+</body>
+</html>

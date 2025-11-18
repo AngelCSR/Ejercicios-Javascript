@@ -1,0 +1,35 @@
+<!--
+Ejercicio tipo examen
+Título: 4.2 - Arrays y bucle for combinado
+Enunciado: Dado un array de números, calcular e imprimir su cuadrado usando for.
+Generado: 2025-10-28T19:33:29.048899 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>4.2 - Arrays y bucle for combinado</title>
+</head>
+<body>
+  <h1>4.2 - Arrays y bucle for combinado</h1>
+  <p><strong>Enunciado:</strong> Dado un array de números, calcular e imprimir su cuadrado usando for.</p>
+  <div id="page"></div>
+  <pre id="log"></pre>
+  <script>
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.join(' ') + '\n'; }
+
+
+let numeros = [1,2,3,4,5];
+for(let i = 0; i < numeros.length; i++){
+  let cuadrado = numeros[i] * numeros[i];
+  writePage("Número: " + numeros[i] + ", cuadrado: " + cuadrado);
+  writeLog("Número", numeros[i], "cuadrado", cuadrado);
+}
+
+
+  </script>
+</body>
+</html>

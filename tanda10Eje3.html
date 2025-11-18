@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * Control de acceso a caja fuerte .
+ */
+
+// 1. Configuración
+const COMBINACION_CORRECTA = "1234"; 
+let intentos = 5;
+
+// 2. Bucle 
+while (intentos > 0) {
+    // Solicitar la combinación y actualizar el contador de intentos
+    let entrada = prompt(`Introduce la combinación de 4 cifras (Intentos restantes: ${intentos}):`);
+    intentos--;
+
+    // Comprobar la combinación
+    if (entrada === COMBINACION_CORRECTA) {
+        alert("CAJA FUERTE ABIERTA ");
+        intentos=0;
+        // Salir del bucle si acierta
+    } else {
+        // Mensaje de error, solo si le quedan intentos
+        if (intentos > 0) {
+            alert("CONTRASEÑA ERRÓNEA ");
+        } else    if (intentos === 0) {
+    alert("ACCESO DENEGADO. Has agotado las 5 oportunidades.");
+}
+    }
+ 
+}
+
+
+    </script>
+</body>
+</html>

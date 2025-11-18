@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotería</title>
+</head>
+<body>
+<script>
+function calcularCombinacion() {
+    let combinacion = new Set();
+
+    while (combinacion.size < 6) {
+        let num = parseInt(Math.random() * 49 + 1);
+        combinacion.add(num);
+    }
+    document.write([...combinacion].sort((a, b) => a - b) + "<br>");
+}
+
+for (let i = 0; i < 5; i++) {
+    document.write(i + " Combinación: ");
+    calcularCombinacion();
+}
+
+/*------------------------------------*/
+document.write("<br>Calcular con función anónima:<br><br>");
+
+const loteria = function () {
+    let combinacion = new Set();
+
+    while (combinacion.size < 6) {
+        let num = parseInt(Math.random() * 49 + 1);
+        combinacion.add(num);
+    }
+    document.write([...combinacion].sort((a, b) => a - b) + "<br>");
+};
+
+for (let i = 0; i < 5; i++) {
+    document.write(i + " Combinación: ");
+    loteria(); // ← llamada correcta
+}
+
+/*------------------------------------*/
+document.write("<br>Calcular con función flecha:<br><br>");
+
+const calcularCombi = () => {
+    let combinacion = new Set();
+
+    while (combinacion.size < 6) {
+        let num = parseInt(Math.random() * 49 + 1);
+        combinacion.add(num);
+    }
+    document.write([...combinacion].sort((a, b) => a - b) + "<br>");
+};
+
+for (let i = 0; i < 5; i++) {
+    document.write(i + " Combinación: ");
+    calcularCombi(); // ← llamada correcta
+}
+</script>
+</body>
+</html>

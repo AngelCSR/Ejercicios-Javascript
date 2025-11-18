@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let numero = Number(prompt("Escribe el número de mes del 1 al 12, para obtener el numero de dias")); 
+    let mes = "";
+/*
+    switch(numero){
+        case 1: mes = 31; break;
+        case 2: mes = 28; break;
+        case 3: mes = 31; break; 
+        case 4: mes = 30; break;
+        case 5: mes = 31; break;
+        case 6: mes = 30; break;
+        case 7: mes = 31; break;
+        case 8: mes = 31; break;
+        case 9: mes = 30; break;
+        case 10: mes = 31; break;
+        case 11: mes = 30; break;
+        case 12: mes = 31; break;
+
+    
+        default: mes = "Número erróneo";
+    }
+        */
+    
+    switch(numero){
+        case 1: 
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+        mes = 31; break;
+        case 2: mes = 28; break;
+        case 4:
+        case 6: 
+        case 9:
+        case 11: 
+        mes = 30; break;
+        
+       default: mes = "Número erróneo";
+    }
+    
+
+    alert("Ese mes es: " + mes);
+    </script>
+</body>
+</html>

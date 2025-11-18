@@ -1,0 +1,39 @@
+<!--
+Ejercicio tipo examen
+Título: 3.3 - Variables y operadores combinados
+Enunciado: Dadas dos notas de un alumno, calcular promedio y mostrar aprobado o suspendido.
+Generado: 2025-10-28T19:33:29.048315 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.3 - Variables y operadores combinados</title>
+</head>
+<body>
+  <h1>3.3 - Variables y operadores combinados</h1>
+  <p><strong>Enunciado:</strong> Dadas dos notas de un alumno, calcular promedio y mostrar aprobado o suspendido.</p>
+  <div id="page"></div>
+  <pre id="log"></pre>
+  <script>
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.join(' ') + '\n'; }
+
+
+let nota1 = 8;
+let nota2 = 5;
+let promedio = (nota1 + nota2) / 2;
+if(promedio >= 6){
+  writePage("Aprobado con promedio " + promedio);
+  writeLog("Aprobado:", promedio);
+} else {
+  writePage("Suspendido con promedio " + promedio);
+  writeLog("Suspendido:", promedio);
+}
+
+
+  </script>
+</body>
+</html>

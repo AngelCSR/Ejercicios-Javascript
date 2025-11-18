@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const nombres = ["Javier", "Daniel", "Ángel","Basilio",,,,"David"];//los arrays pueden tener cualquier tipo de dato son heterogeneos
+        console.log(nombres[2]); // Ángel
+        console.log(nombres); // Muestra todo el array
+        //console.log(nombres.length); // 8musestra la longitud del array
+        //uso de let y const con arrays, se supone que no se puede cambiar el valor de una constante,
+        // pero en el caso de los arrays si se puede cambiar su contenido
+        
+        //intentamos añadir una celda mas
+        nombres[5]="María";
+        console.log(nombres);
+        //recorrer un array, vemos que a creado la celda 8 vacia
+        //intento crear una celada 18 y me crea las intermedias vacias
+       // nombres[18]="Pepe";
+        //console.log(nombres);
+        //creo una nueva array nombres2 con let y la igualo a nombres, vemos que despues si hago un cambi en nombres2
+        //tambien cambia en nombres
+        let nombres2=nombres;
+        nombres2[0]="Pepe";
+        console.log(nombres);
+        console.log(nombres2);
+        delete nombres[5]; //elimina la celda 0 pero no reordena el array
+        console.log(nombres);
+        //definimos una array dentro de otro array
+        const varios=[1,"Hola",true,[1,2,3],{nombre:"Javier",edad:40}];
+        console.log(varios);
+        console.log(varios[3][1]);//accedo al 2 elemento del array que esta dentro del array varios
+        console.log(varios[4].nombre);//accedo a la propiedad nombre del objeto que esta en la celda 4 del array varios
+
+
+
+
+
+ 
+     let arrayNueva=cadena1.slice() //crea una copia de cadena1
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+        //recorrer un array con for in ,la variable i toma el valor de los indices del array yno es necesario declararla
+        //se salta las celdas vacias
+        console.log("Recorrer con for in");
+        for (let i in nombres){
+            console.log(`la posicion ${i} tiene el valor ${nombres[i]}`);
+        }
+        //recorrer un array con for of ,la variable nombre toma el valor de los elementos del array y no los indices yno es necesario declararla
+        console.log("Recorrer con for of");
+        for (let nombre of nombres){
+            console.log(nombre);
+        }
+        //recorrer un array con for clasico
+        console.log("Recorrer con for clasico");
+        for (let i=0;i<nombres.length;i++){
+            console.log(nombres[i]);
+        }
+        //recorrer un array con forEach, la funcion recibe el valor y el indice valor vale el valor del elemento e indice el indice del elemento
+        console.log("Recorrer con forEach");
+        nombres.forEach(function(valor,indice){
+            console.log(indice+"-"+valor);
+        });
+        
+
+        
+
+
+
+
+
+        
+        
+        
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+       
+        
+        //usos de instanceof y Array.isArray
+        console.log(nombres instanceof Array);//true esto indica si nombres es un array
+        console.log(Array.isArray(nombres));//true esto indica si nombres es un array
+        console.log("-------------");
+        console.log(varios instanceof Object);//true todos los arrays son objetos
+        console.log(varios instanceof Array);//true
+
+
+
+
+
+
+       
+      /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+       
+       
+        //---------------- metodos para añadir eliminar y buscar elementos en un array-----------------------------------------
+        console.log("-------------");
+        console.log(nombres);
+        nombres.push("Sandra");//añade un elemento al final del array
+        console.log(nombres);
+        nombres.unshift("Ana");//añade un elemento al principio del array
+        console.log(nombres);
+        nombres.pop();//elimina el ultimo elemento del array
+        console.log(nombres);
+        nombres.shift();//elimina el primer elemento del array
+        console.log(nombres);
+
+
+        console.log(nombres.indexOf("David"));//devuelve el indice del elemento buscado o -1 si no lo encuentra
+        console.log(nombres.indexOf("Pepe"));//devuelve -1 porque no lo encuentra
+        console.log(nombres.includes("Daniel"));//devuelve true si lo encuentra y false si no
+        console.log(nombres.includes("Ata"));//devuelve false porque no lo encuentra
+        console.log(nombres.reverse());//da la vuelta al array
+        console.log(nombres.sort());//ordena el array alfabeticamente
+        nombres.splice(2,0,"Pepe","Luis");//añade los elementos en la posicion 2, el segundo parametro indica que no borra ningun elemento
+        console.log(nombres);
+        nombres.splice(4,2);//elimina 2 elementos a partir de la posicion 4
+        console.log(nombres);
+        let nombres3=nombres.slice(1,4);//crea un nuevo array con los elementos desde la posicion 1 a la 3
+        console.log(nombres3);
+        console.log(nombres);//el array original no se modifica
+
+
+
+
+        //Metodos para mezclar arrays
+        const array1=[1,2,3];
+        const array2=["a","b","c"];
+        const cadena="Hola";
+        const array3=array1.concat(array2);//une los dos arrays en uno nuevo
+        console.log(array3);
+        const array4=[...array1,...array2];//une los dos arrays en uno nuevo
+        console.log(array4);
+        const cadena1=array1.concat(array2).concat(cadena);//une los dos arrays y la cadena en uno nuevo
+        console.log(cadena1);
+        const cadena2=[...array1,...array2,...cadena];//une los dos arrays y la cadena en uno nuevo
+        console.log(cadena2);
+
+        let arrayNua=cadena1.slice() //crea una copia de cadena1
+
+         //mezclar un array de forma aleatoria
+        const numeros3=[1,2,3,4,5,6,7,
+            8,9,10];
+        console.log(numeros3);
+        numeros3.sort(function(){
+            return Math.random()-0.5;
+        });
+        console.log(numeros3);  
+
+
+        //------------------------------OBTENER Y AÑADIR SUBARRAYS y convertir arrays----------------------------------------------------------
+
+
+
+        const array5=array3.slice(2,5);//crea un nuevo array con los elementos desde la posicion 2 a la 4
+        console.log(array5);
+        array3.splice(2,0,...array2);//añade los elementos de array2 en la posicion 2 de array3
+        console.log(array3);
+        //convertir un array en una cadena de texto
+        const texto=array3.join("-");//une los elementos del array en una cadena de texto separados por el caracter indicado
+        console.log(texto);
+        const texto2=array3.toString();//une los elementos del array en una cadena de texto separados por comas
+        console.log(texto2);
+        //convertir una cadena de texto en un array
+        const texto3="Hola,que,ase";
+        const array6=texto3.split(",");//crea un array con los elementos separados por el caracter indicado
+        console.log(array6);
+
+
+
+
+
+        //--------------------------MODIFICAR EL ORDEN DE LOS ELEMENTOSDE UN ARRAY-----------------------------------------
+      
+      
+      
+        //------------------------------------short
+        const numeros=[1,2,3,4,5,6,7,8,9,10];
+        console.log(numeros);
+        //ordenar un array de numeros de menor a mayor
+        numeros.sort(function(a,b){
+            return a-b;
+        });
+        console.log(numeros);
+
+        //ordenar un array de numeros de mayor a menor
+        numeros.sort(function(a,b){
+            return b-a;
+        });
+        console.log(numeros);
+
+        //ordenar un array de objetos por una propiedad
+        const personas=[
+            {nombre:"Javier",edad:40},
+            {nombre:"Ana",edad:30},
+            {nombre:"Luis",edad:50}
+        ];
+        console.log(personas);
+        personas.sort(function(a,b){
+            return a.edad-b.edad;
+        });
+        console.log(personas);
+
+        //ordenar un array de cadenas de texto alfabeticamente
+        const palabras=["manzana","pera","banana","kiwi"];
+        console.log(palabras);
+        palabras.sort();
+        console.log(palabras);
+
+        //ordenar un array de cadenas de texto alfabeticamente ignorando mayusculas y minus
+        const palabras2=["Manzana","pera","banana","Kiwi"];
+        console.log(palabras2);
+        palabras2.sort(function(a,b){
+            return a.toLowerCase().localeCompare(b.toLowerCase());
+        });
+        console.log(palabras2);
+
+        //ordenar un array de cadenas de texto por su longitud
+        const palabras3=["manzana","pera","banana","kiwi"];
+        console.log(palabras3);
+        palabras3.sort(function(a,b){
+            return a.length-b.length;
+        });
+        console.log(palabras3);
+
+        //ordenar un array de cadenas de texto por su longitud ignorando mayusculas y
+        const palabras4=["Manzana","pera","banana","Kiwi"];
+        console.log(palabras4);
+        palabras4.sort(function(a,b){
+            return a.toLowerCase().length-b.toLowerCase().length;
+        });
+        console.log(palabras4);
+
+        //ordenar un array de cadenas de texto por su longitud y alfabeticamente
+        const palabras5=["manzana","pera","banana","kiwi","kiwii"];
+        console.log(palabras5);
+        palabras5.sort(function(a,b){
+            if(a.length===b.length){
+                return a.localeCompare(b);
+            }
+            return a.length-b.length;
+        });
+        console.log(palabras5);
+
+
+
+        //---------------------------reverse
+        const letras=["a","b","c","d","e"];
+        console.log(letras);
+        letras.reverse();
+        console.log(letras);
+
+        //invertir un array de numeros
+        const numeros2=[1,2,3,4,5,6,7,8,9,10];
+        console.log(numeros2);
+        numeros2.reverse();
+        console.log(numeros2);
+
+        //invertir un array de cadenas de texto
+        const palabras6=["manzana","pera","banana","kiwi"];
+        console.log(palabras6);
+        palabras6.reverse();
+        console.log(palabras6);
+
+        //invertir un array de objetos
+        const personas2=[
+            {nombre:"Javier",edad:40},
+            {nombre:"Ana",edad:30},
+            {nombre:"Luis",edad:50}         
+        ];
+        console.log(personas2);
+        personas2.reverse();
+        console.log(personas2);
+       
+        //--------------------------DESESTRUCTURACIÓN DE ARRAYS-----------------------------------------
+        const array7=[1,2,3,4,5];
+        //sin desestructuración
+        const a1=array7[0];
+        const a2=array7[1];
+        const a3=array7[2];
+        console.log(a1,a2,a3);
+        //con desestructuración
+        const [b1,b2,b3]=array7;
+        console.log(b1,b2,b3);
+        //con desestructuración y saltando elementos
+        const [c1,,c3]=array7;
+        console.log(c1,c3);
+        //con desestructuración y el resto de elementos en un array
+        const [d1,...dresto]=array7;
+        console.log(d1,dresto);
+        //con desestructuración y valores por defecto
+        const [e1,e2,e3=10,e4=20]=array7;
+        console.log(e1,e2,e3,e4);
+        //intercambiar valores de dos variables con desestructuración
+        let x="Mercurio";
+        let y="Tierra";
+        console.log(x,y);
+        [x,y]=[y,x];
+        console.log(x,y);
+        //spread operator se usa para expandir un array en elementos individuales y viceversa
+        const array8=[...array7,6,7,8];//expande array7
+        console.log(array8);
+        const array9=[0,...array7];//expande array7
+        console.log(array9);
+        const array10=[...array7];//copia array7
+        console.log(array10);
+        const array11=array7;//no copia array7, solo crea una referencia
+        console.log(array11); 
+
+
+        
+    </script>
+</body>
+</html>

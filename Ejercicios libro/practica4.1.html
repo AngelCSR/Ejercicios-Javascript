@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*Codigo cesar*/
+        let clave=Number(prompt("Introduce una clave"));
+        let frase=prompt("Introduce una frase o palabra");
+        let posicion, resultado="" ,posiconFinal
+
+        for(let i=0; i<frase.length;i++){
+
+            posicion=frase.charCodeAt(i);
+            posiconFinal=posicion+clave;
+
+            resultado+=String.fromCharCode(posiconFinal);
+
+        }
+
+        alert('El resultado es: '+resultado);
+/*
+Ejemplo 1
+Clave: 1
+
+Frase: Gnk`
+
+Resultado: Hola`
+
+Esto tiene sentido porque cada letra se ha desplazado una posición en el alfabeto.
+
+Ejemplo 2
+Clave: 3
+
+Frase:  @^p^
+
+Resultado: Casa
+
+
+Ejemplo 3
+Clave: -1
+
+Frase: Ipmb
+
+Resultado: Hola
+
+¡Este es el caso inverso! Si introduces una frase cifrada y una clave negativa, puedes descifrar el mensaje.*/
+   
+//tambien se puede hacer asi------------------------------------------------------
+    let mensaje=prompt("Escribe una frase");
+       let num;
+       do{
+        num=parseInt(prompt("Escribe un numero del 1 al 25"))
+       }while(isNaN(num) || num>25 || num<1)
+
+       let letrasMensaje=mensaje.split("")
+
+       let mensajeCifrado=[]
+       for(let i in letrasMensaje){
+        mensajeCifrado.push(String.fromCharCode(mensaje.charCodeAt(i)+num))
+       }
+
+       document.write(` El mensaje "${mensaje}" con cifrado Cesar + ${num} es : ` )
+       mensaje=mensajeCifrado.join("")
+       document.write(mensaje)
+
+    </script>
+</body>
+</html>

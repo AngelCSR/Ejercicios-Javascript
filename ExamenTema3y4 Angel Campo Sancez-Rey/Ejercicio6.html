@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let palabra =prompt("Escribe una palabra");
+        let i = 0;
+        let array=[]
+        const palabraconstante=palabra
+        console.log(palabraconstante)
+
+        for (let i=0;i<palabra.length;i++){
+            array[i]=palabra.charAt(i)
+
+        }
+        
+      
+
+        do {
+            
+            
+            // esto no se hace let ultimoElemento=array.pop()
+            let primerElemento=array.shift()
+            // esto no se hace array.unshift(ultimoElemento)
+            array.push(primerElemento)
+            palabra=array.join('')
+            console.log(palabra);
+
+
+        
+        } while (palabra!=palabraconstante);
+    </script>
+</body>
+</html>

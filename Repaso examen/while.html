@@ -1,0 +1,26 @@
+<!--
+Tema: Bucle while aplicado a Arrays
+Objetivo: Sumar todos los elementos de un array con un bucle while.
+Conceptos: inicialización, condición, actualización.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>While con Arrays</title></head>
+<body>
+  <h2>Bucle while con Arrays</h2>
+  <script>
+    let numeros = [2, 4, 6, 8, 10];
+    let suma = 0;
+    let i = 0; // variable de control
+
+    // Mientras i sea menor que la longitud del array, sigue iterando
+    while (i < numeros.length) {
+      suma += numeros[i]; // acumula el valor
+      console.log("Suma parcial:", suma);
+      i++; // actualiza el índice
+    }
+
+    document.write("Suma total = " + suma);
+  </script>
+</body>
+</html>

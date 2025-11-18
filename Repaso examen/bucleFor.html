@@ -1,0 +1,24 @@
+<!--
+Tema: Recorriendo Arrays con bucle for
+Objetivo: Mostrar cómo usar un bucle for para recorrer los elementos de un array.
+Conceptos: Array, longitud (.length), índices, iteración controlada.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Bucle for con Arrays</title></head>
+<body>
+  <h2>Bucle for con Arrays</h2>
+  <script>
+    // Paso 1: Declaramos un array con nombres de frutas
+    let frutas = ["Manzana", "Pera", "Banana", "Naranja"];
+
+    // Paso 2: Usamos un bucle for para recorrerlo
+    // El índice i comienza en 0 y termina cuando i < frutas.length
+    for (let i = 0; i < frutas.length; i++) {
+      // Paso 3: Mostramos cada elemento usando su índice
+      console.log("Fruta " + (i + 1) + ": " + frutas[i]);
+      document.write("Fruta " + (i + 1) + ": " + frutas[i] + "<br>");
+    }
+  </script>
+</body>
+</html>

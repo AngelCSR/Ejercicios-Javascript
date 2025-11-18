@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let palabra1=prompt("Introduce una palabra: ")
+        let palabra2=prompt("Introduce una palabra: ")
+        let palabra3=prompt("Introduce una palabra: ")
+        let cont=0
+        let cont2=1
+        let array1=[]
+        let array2=[]
+        let array3=[]
+        let comun=new Map()
+        for (let i=0; i<palabra1.length;i++){
+            array1[i]=palabra1.charAt(i)
+
+        }
+        for (let i=0;i<palabra2.length;i++){
+            array2[i]=palabra2.charAt(i)
+
+        }
+        for (let i=0;i<palabra3.length;i++){
+            array3[i]=palabra3.charAt(i)
+
+        }
+        
+        let cadena=[...array1,...array2,...array3]
+
+        for (let letra of cadena){
+
+             if(letra==cadena[cont]){
+                comun.set(letra,cont2)
+                cont2++
+            } 
+            
+            cont++
+        }
+     
+        document.write(cadena)
+        console.log(comun.keys())
+    </script>
+</body>
+</html>

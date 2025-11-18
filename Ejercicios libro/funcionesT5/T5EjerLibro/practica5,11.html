@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* Buscaminas 
+
+Crear una aplicación web que muestre un mapa del popular juego buscaminas en el que apa­
+rezcan las minas dibujadas y también que se indique en las casillas sin minas, las minas que
+hay alrededor.
+• Hacerlo de forma modular de manera que dividamos la aplicación en una serie de funciones.
+Concretamente recomendamos:
+- Una función a la que le pasemos el tablero buscaminas (sería un array de dos dimensiones)
+y coloque en él de manera aleatoria las minas. Esta podría dividirse en dos, siendo una más
+sencilla la que recibe el array del tablero, una posición en él y devuelve las minas alrededor
+de esa posición. La función principal simplemente invoca a esa segunda recorriendo cada
+casilla
+- Otra función que recorra el tablero marcando en cada casilla las minas que hay alrededor.
+Finalmente una tercera función que dibuje el tablero en una página web
+• Se pedirá al usuario el tamaño del tablero y las minas a colocar.
+• Ejemplo de resultado final (tablero de 9x9 y 16 minas):
+        */
+
+          // Creamos el array tablero para almacenar el estado del juego
+        const tablero = []
+        // Esta función inicializa el tablero con nueve filas y nueve columnas
+        function inicializarTablero() {
+            for (let i = 0; i < 9; i++) {
+                tablero.push([0, 0, 0, 0, 0, 0, 0, 0, 0])//añadimos una fila con nueve columnas inicializadas a 0 
+            }
+        }
+
+        function crearTabla(nfilas = 9, ncolumnas = 9) {//Esta funcion dibuja la tabla
+
+            let num = 0;
+
+            document.write("<table border='1'>");
+            for (let i = 0; i < nfilas; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < ncolumnas; j++) {
+                    //document.write("<td>Fila "+(i+1)+" Columna "+(j+1)+"</td>");
+                    //document.write(`<td> ${num++}</td>`);// esto muestra el número secuencialmente con postincremento
+                    document.write(`<td>&nbsp &nbsp ${tablero[i][j]}&nbsp &nbsp</td>`)// esto muestra el valor del tablero en la posición i,j que inicialmente es 0 y hemos creado en la función inicializarTablero
+                }
+
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        function iniciarMinas() {//Esta funcion va a ubicar aleatoriamente las minas
+            for (let i = 0; i < 16; i++) {//colocamos 16 minas
+                let x = parseInt(Math.random() * 9)//generamos una fila aleatoria
+                let y = parseInt(Math.random() * 9)//generamos una columna aleatoria
+                if (tablero[x][y] == 0) {//si en esa posición no hay mina , si no que está a 0, el valor inicial que le dimos
+                    tablero[x][y] = "💣"//si en esa posición no hay mina la colocamos
+                } else {
+                    i--//si ya había mina volvemos a repetir el proceso para colocarla en otra posición
+                }
+            }
+        }
+
+        function iniciarAlrrededor() {//Esta funcion va indicar cuantas minas tiene alrededor cada casilla
+            //recorremos todo el tablero
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    if (tablero[i][j] != "💣") {//si en esa posición no hay mina
+                        minasAlrrededor(i, j)
+                    }
+
+                }
+            }
+
+        }
+
+        function minasAlrrededor(a, b) {//rrecorre las celdas alrededor de una posición dada y devuelve si hay minas
+            //comprobamos las 8 posiciones alrededor de la posición i,j
+
+            for (let i = a - 1; i <= a + 1; i++) {
+                for (let j = b - 1; j <= b + 1; j++) {
+                    if(tablero[i] != undefined){
+                        if (tablero[i][j] != undefined) {
+                            if (tablero[i][j] == "💣") {
+                                tablero[a][b]++
+                            }
+                    }
+
+
+                    }
+                    
+                }
+            }
+                /*
+    
+                if (tablero[a - 1][b - 1] != undefined) {
+                    if (tablero[a - 1][b - 1] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                if (tablero[a - 1][b] != undefined) {
+                    if (tablero[a - 1][b] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                if (tablero[a - 1][b + 1] != undefined) {
+                    if (tablero[a - 1][b + 1] == "💣") {
+                        tablero[a][b]++
+                    }
+    
+    
+                }
+                if (tablero[a][b - 1] != undefined) {
+                    if (tablero[a][b - 1] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                if (tablero[a][b + 1] != undefined) {
+                    if (tablero[a][b + 1] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                if (tablero[a + 1][b - 1] != undefined) {
+                    if (tablero[a + 1][b - 1] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                if (tablero[a + 1][b] != undefined) {
+                    if (tablero[a + 1][b] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                if (tablero[a + 1][b + 1] != undefined) {
+                    if (tablero[a + 1][b + 1] == "💣") {
+                        tablero[a][b]++
+                    }
+                }
+                    */
+            }
+            inicializarTablero();
+            iniciarMinas();
+            iniciarAlrrededor();
+            crearTabla();//llamada a la función con valores por defecto
+
+    </script>
+</body>
+</html>

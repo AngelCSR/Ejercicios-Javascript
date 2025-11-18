@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let alumnos=["Ana","Luis","Pedro","María"];       
+        let sumaLetras=alumnos.reduce(function(acumulador,elemento){//el primer parametro es el acumulador y el segundo el elemento actual, el acumulador guarda el resultado de la operacion
+            return acumulador+elemento.length;//acumulador empieza en 0 y le vamos sumando la longitud de cada elemento
+        },0);//el 0 es el valor inicial del acumulador
+        console.log(`La suma de todas las letras de los nombres es: ${sumaLetras}`);    
+        //con arrow function
+        let sumaLetras2=alumnos.reduce((acumulador,elemento)=>acumulador+elemento.length,0);//el 0 es el valor inicial del acumulador y se pone al final
+        console.log(`La suma de todas las letras de los nombres es: ${sumaLetras2}`);   
+
+    </script>
+</body>
+</html>

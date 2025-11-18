@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt=prompt("Introduce un texto: ")
+        let apariciones= new Map()
+        
+       
+        for(letra of txt){
+            if(apariciones.has(letra)){
+                 apariciones.set(letra,apariciones.get(letra)+1)
+            } else {
+                apariciones.set(letra, 1);
+            }
+        }
+        for([caracter, num] of apariciones){
+            document.write(`Caracter: ${caracter} -->Numero de apariciones:  ${num} `+"<br>")
+        }
+        
+
+    </script>
+</body>
+</html>

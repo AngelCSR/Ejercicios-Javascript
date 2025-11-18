@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Programa que sirva para jugar a la palabra secreta*/
+        const secreta= "luna"
+        //crear una variable solucuion con los * que tenga de caracteres la palabra secreta
+        let solucion=""
+
+        for(let i=0; i< secreta.length;i++){
+            solucion+="*"
+        }
+        let soluArray=solucion.split("")
+        //bucle que se repita hasta que el usuario adivine todas las letras de la palabra secreta, cmbiando la letra adivinada en la variable solucion en la posicion correcta
+        //para palabras sin repeticion de letra
+        while(solucion!=secreta){
+            let letra=prompt(solucion+"; Introduce una letra")
+            if(secreta.includes(letra)){
+                soluArray[secreta.indexOf(letra)]=letra
+                solucion=soluArray.join("")
+            }
+
+        }
+
+
+
+           /* 
+           while(solucion!=secreta){
+           let nuevaSolucion=""
+            for(let i=0;i<secreta.length;i++){
+                if(secreta.charAt(i)==letra){
+                    nuevaSolucion+=letra
+                } else if (solucion.charAt(i)!= "*"){
+                    nuevaSolucion+=solucion.charAt(i)
+                } else {
+                    nuevaSolucion+="*"  
+                }
+
+        }
+        solucion=nuevaSolucion
+        }*/
+        
+        /*while(solucion!=secreta){
+        if(secreta.includes(letra)){
+            let nuevaSolucion=""
+            for(let i=0;i<secreta.length;i++){
+                if(secreta.charAt(i)==letra){
+                    nuevaSolucion+=letra
+                } else if (solucion.charAt(i)!= "*"){
+                    nuevaSolucion+=solucion.charAt(i)
+                } else {
+                    nuevaSolucion+="*"  
+                }
+
+            
+            }
+            solucion=nuevaSolucion
+        }
+        }*/
+    
+
+       
+        console.log(solucion)
+    </script>
+</body>
+</html>

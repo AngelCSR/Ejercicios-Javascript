@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Algoritmo que pida un año y que escriba si es bisiesto o no. IMPORTANTE: 
+        los años bisiestos son múltiplos de 4, pero los múltiplos de 100 no lo son, 
+        aunque los múltiplos de 400 sí. 
+        */
+       let anio= parseInt(prompt("Introduce un año"));
+         if(anio%4==0 && anio%100!=0 || anio%400==0){
+           alert("El año "+anio+" es bisiesto");
+         } else {
+          alert (`El año : ${anio} no es bisiesto`);
+         }
+
+    </script>
+</body>
+</html>

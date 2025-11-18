@@ -1,0 +1,54 @@
+<!--
+Tema: Cuadros de diálogo
+Objetivo: Mostrar alert, confirm y prompt con explicaciones.
+Generado: 2025-10-28T19:24:42.293910 UTC
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3.6 - Cuadros de diálogo del navegador (alert, confirm, prompt)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; line-height: 1.6; }
+    pre.output { background:#0b1220; color:#e6eef8; padding:1rem; border-radius:.5rem; overflow:auto; }
+    .note { background:#f3f4f6; padding: .6rem; border-radius:.4rem; border:1px solid #e5e7eb; }
+  </style>
+</head>
+<body onload='void(0)'>
+  <a href="../index.html">← Volver al índice</a>
+  <h1>3.6 - Cuadros de diálogo del navegador (alert, confirm, prompt)</h1>
+  <p class="note"><strong>Guía didáctica:</strong> Sigue los comentarios en el código para entender cada paso.</p>
+  <h2>Salida en pantalla</h2>
+  <div id="page"></div>
+  <h2>Salida en consola / logs</h2>
+  <pre class="output" id="log"></pre>
+  <script>
+    // Helper sencillo para mostrar en pantalla y consola
+    const page = document.getElementById('page');
+    const logEl = document.getElementById('log');
+    function writePage(txt) { page.innerHTML += txt + '<br>'; }
+    function writeLog() { const args = Array.from(arguments); logEl.textContent += args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ') + '\n'; }
+
+
+// ALERT: muestra un cuadro modal con mensaje (detiene la interacción hasta cerrarlo)
+// Comentario: Usar alert para mensajes simples; evitarlos en producción por ser intrusivos.
+writePage("Se mostrará un alert en la ventana del navegador. (Cierra la alerta para continuar)");
+writeLog("Mostrando alert en la ventana del navegador...");
+alert("Este es un alert: pulsa aceptar para continuar");
+
+// CONFIRM: solicita una confirmación, devuelve true/false
+let respuesta = confirm("¿Quieres continuar? (Aceptar = true, Cancelar = false)");
+writePage("Respuesta del confirm: " + respuesta);
+writeLog("Confirm result:", respuesta);
+
+// PROMPT: solicita entrada de texto y devuelve la cadena (o null si cancelas)
+let nombre = prompt("Escribe tu nombre (prueba):", "NombreEjemplo");
+writePage("Valor recibido con prompt: " + nombre);
+writeLog("Prompt returned:", nombre);
+
+
+  </script>
+  <footer style="margin-top:1rem;color:#6b7280;font-size:.9rem">Parte del paquete de ejercicios didácticos — Unidades 3 y 4.</footer>
+</body>
+</html>

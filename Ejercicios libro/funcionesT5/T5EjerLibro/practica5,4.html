@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let palabrasSet= new Set();
+        let palabra
+
+        do{
+            palabra=prompt("Introduce una palabra :");
+
+            palabrasSet.add(palabra);
+            
+
+
+        }while(palabra!="" && palabra!=null);
+        palabrasSet.delete("");//elimina la cadena vacía del Set
+        palabrasSet.delete(null);//elimina el null del Set
+
+        let arrayPalabras=[...palabrasSet];//convierte el Set en un array usando el operador spread ...
+        arrayPalabras.sort((a,b)=>b.localeCompare(a,"es"));//ordena el array en orden descendente, 
+                                                    // de la Z a la A , al contrario seria 
+                                                    //(a,b)=>a.localeCompare(b) y lo ordenaria de la A a la Z
+        console.log(arrayPalabras);
+    </script>
+</body>
+</html>

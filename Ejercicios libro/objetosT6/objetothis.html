@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function doblarX() {//función que dobla la x del objeto que la invoque, solo funciona si se llama desde un objeto
+            this.x *= 2;
+        }
+        let punto = {//objeto punto con propiedades  x,y y método doble
+            x: 15,
+            y: 7,
+            doble: doblarX
+        };
+        let incógnita = {//objeto incógnita con propiedad x y método dbl
+            x: 5,
+            dbl: doblarX
+        };
+
+        punto.doble();//invocamos el método doble del objeto punto con () porque es una función
+        incógnita.dbl();
+        console.log(punto.x) //Escribe 30, doble de 15
+        console.log(incógnita.x) //Escribe 10, doble 5
+
+
+
+    </script>
+</body>
+
+</html>

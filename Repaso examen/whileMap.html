@@ -1,0 +1,35 @@
+<!--
+Tema: Bucle while con Map
+Objetivo: Recorrer un Map con while y sumar sus valores.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>While con Map</title></head>
+<body>
+  <h2>While con Map</h2>
+  <script>
+    // Creamos un Map con productos y precios
+    let precios = new Map([
+      ["Pan", 1.2],
+      ["Leche", 1.5],
+      ["Huevos", 2.0]
+    ]);
+
+    // Convertimos las claves en un array para usar índices
+    let claves = Array.from(precios.keys());
+    let i = 0;
+    let total = 0;
+
+    while (i < claves.length) {
+      let producto = claves[i];
+      let precio = precios.get(producto);
+      total += precio;
+      console.log(producto + ": " + precio);
+      document.write(producto + ": " + precio + "<br>");
+      i++;
+    }
+
+    document.write("<strong>Total: " + total.toFixed(2) + "</strong>");
+  </script>
+</body>
+</html>

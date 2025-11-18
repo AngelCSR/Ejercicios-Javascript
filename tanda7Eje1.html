@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     /*Algoritmo que te pida la temperatura y te diga si "Hace mucho frio" ,
+    "Hace frio" , "Temperatura fresca" , "Temperatura buena", "Un poco caluroso",
+    "Hace calor", "Hace mucho calor". Las temperaturas numéricas ponlas como 
+    consideres oportuno (Por ejemplo, mucho frío, a partir de -5 grados)*/
+
+        let t = Number(prompt("Escribela temperatura en grados")); 
+        
+        if(t<0 && t<6){
+            alert("Hace mucho frio");
+        }else if(t<9){
+            alert("Hace frio");
+        }else if(t<18 ){
+            alert("Hace temperatura fresca");
+        }else if(t<25){
+            alert("Temperatura buena");
+        }
+        else if(t<30){
+            alert("Un poco caluroso");
+        }else if(t<36){
+            alert("Hace calor");
+        }else{
+            alert("Hace mucho calor");
+        }
+
+        
+    </script>
+</body>
+</html>

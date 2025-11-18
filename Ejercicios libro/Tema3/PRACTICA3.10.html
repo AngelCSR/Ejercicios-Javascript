@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:5px;
+            text-align: center;
+           
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <script>
+        /*Crear una página que muestre los primeros 10000 símbolos de la tabla Unicode.
+         Se mostrará en una tabla en la que en cada fila se indica el número de código, seguido del
+        carácter de ese código.
+        Primero
+        creamos filas en un bucle
+        paracada fila crear 20 celdas
+        hasta crear 20000 celdas*/
+        const NUMCELDAS=20000;
+        let codigo=0;
+
+        for(let celdasCreadas=0;celdasCreadas<NUMCELDAS;celdasCreadas+=20){
+            document.write("<tr>");
+                for(let i=0;i<10;i++){
+                    document.write("<td>"+codigo+"</td>"+"<td>"+String.fromCharCode(codigo)+"</td>");
+                    codigo++;
+
+                }
+           
+            document.write("</tr>");// cerrar fila
+           
+            
+        }
+
+
+       
+        </script>
+    </table>
+
+</body>
+</html>

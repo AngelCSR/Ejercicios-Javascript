@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function calcularCombinacion(){
+            let combinacion= new Set()
+
+            while(combinacion.size<6){
+                let num=parseInt(Math.random()*49 +1)
+                combinacion.add(num) 
+            }
+            document.write([...combinacion].sort((a,b)=>(a-b)) +" <br>")
+            }
+            for(let i=0;i<5;i++){
+              document.write(i+" Combinacion: ") + calcularCombinacion();
+            }
+            
+    </script>
+</body>
+</html>
