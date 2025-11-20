@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+ // Creamos un objeto Date con la fecha y hora actual
+ let hoy = new Date(); 
+ // Mostramos la fecha completa en la consola
+ console.log(hoy); // Ejemplo: Sat Jun 29 2019 00:58:47 GMT+0200
+
+ // Obtenemos el año actual usando getFullYear()
+ console.log(hoy.getFullYear()); // Ejemplo: 2024
+
+ // Obtenemos el mes actual (0 = enero, 11 = diciembre)
+ console.log(hoy.getMonth()); // Ejemplo: 5 para junio
+
+ // Obtenemos el día del mes
+ console.log(hoy.getDate()); // Ejemplo: 29
+
+ // Obtenemos el día de la semana (0 = domingo, 6 = sábado)
+ console.log(hoy.getDay()); // Ejemplo: 6 para sábado
+
+ // Obtenemos la hora actual
+ console.log(hoy.getHours()); // Ejemplo: 14
+
+ // Obtenemos los minutos actuales
+ console.log(hoy.getMinutes()); // Ejemplo: 34
+
+ // Obtenemos los segundos actuales
+ console.log(hoy.getSeconds()); // Ejemplo: 56
+
+ // Obtenemos los milisegundos actuales
+ console.log(hoy.getMilliseconds()); // Ejemplo: 789
+
+ // Obtenemos la diferencia horaria respecto a UTC en minutos
+ console.log(hoy.getTimezoneOffset()); // Ejemplo: -120
+
+ // Creamos una fecha específica: 27 de junio de 2013 a las 18:12:00
+ let fecha = new Date(2013, 5, 27, 18, 12, 0, 0); 
+ console.log(fecha); // Ejemplo: Thu Jun 27 2013 18:12:00 GMT+0200
+
+ // Creamos una fecha a partir de milisegundos desde el 1 de enero de 1970
+ let fecha2 = new Date(1000); 
+ console.log(fecha2); // Ejemplo: Thu Jan 01 1970 01:00:01 GMT+0100
+
+ // Mostramos la fecha en formato ISO
+ console.log(hoy.toISOString()); // Ejemplo: 2024-06-06T12:34:56.789Z
+
+ // Mostramos la fecha en formato local
+ console.log(hoy.toLocaleString()); // Ejemplo: 6/6/2024 14:34:56
+
+ // Mostramos solo la fecha en formato local
+ console.log(hoy.toLocaleDateString()); // Ejemplo: 6/6/2024
+
+ // Mostramos solo la hora en formato local
+ console.log(hoy.toLocaleTimeString()); // Ejemplo: 14:34:56
+
+ // Usamos el método estático Date.now() para obtener los milisegundos actuales
+ console.log(Date.now()); // Ejemplo: 1717677296789
+
+ // Usamos Date.UTC para obtener los milisegundos de una fecha UTC
+ console.log(Date.UTC(2013, 5, 27, 18, 12, 0, 0)); // Ejemplo: 1372356720000
+
+ // Métodos para establecer valores
+ hoy.setFullYear(2025);
+ hoy.setMonth(11); // diciembre
+ hoy.setDate(25);
+ hoy.setHours(10);
+ hoy.setMinutes(30);
+ hoy.setSeconds(15);
+ hoy.setMilliseconds(500);
+ console.log(hoy); // Fecha modificada
+
+ // Métodos para obtener valores UTC
+/*<!--
+    The following code logs various components of the current date and time in Coordinated Universal Time (UTC) using JavaScript's Date object methods:
+        - getUTCFullYear(): Returns the year in UTC.
+        - getUTCMonth(): Returns the month (0-11) in UTC.
+        - getUTCDate(): Returns the day of the month (1-31) in UTC.
+        - getUTCHours(): Returns the hour (0-23) in UTC.
+        - getUTCMinutes(): Returns the minutes (0-59) in UTC.
+        - getUTCSeconds(): Returns the seconds (0-59) in UTC.
+        - getUTCMilliseconds(): Returns the milliseconds (0-999) in UTC.
+    These methods are useful for working with dates and times independent of the local timezone.
+*/
+ console.log(hoy.getUTCFullYear());
+ console.log(hoy.getUTCMonth());
+ console.log(hoy.getUTCDate());
+ console.log(hoy.getUTCHours());
+ console.log(hoy.getUTCMinutes());
+ console.log(hoy.getUTCSeconds());
+ console.log(hoy.getUTCMilliseconds());
+</script>
+</body>
+</html>

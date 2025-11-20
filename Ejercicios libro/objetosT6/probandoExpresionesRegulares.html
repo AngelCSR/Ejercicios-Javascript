@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let frase="Se acerca el invierno"
+        let frase2=" amar Esta niña se llama marta"
+        //expresion que comprueba si el primer caracter del string es una L mayus o minuscula
+        let expr1=/^L/i
+        //expresion que comprueba si al final de una string esta la letra correspondiente
+
+        let expr2=/o$/i
+
+        //Expresion que busque si hay palabras de dos caracteres ( \s ) para espacio
+
+        let expr3=/\s..\s/
+
+        let expr4=/(^..\s|\s..\s|\s..$|^..$)/ //comprueba si empieza con una palabra de dos caracteres,
+                                        // o tiene palabras con 2 caracteres o si acaba con un 
+                                        // espacio dos caracters y final de cadena o se acaba co 2 caracteres
+                                        //o que el string tenga dos caracteres
+         //palabras que empiezar por a y terminan por r
+       
+         // let expr5=/a*r/ //esto solo comprueba si hay palabras que tengan una a seguida de caracteres y una r
+       
+         let expr5=/\sa.*r\s/i //comprueba espacio empieza por a .*(uno o varios caracters) y termina en r
+
+        console.log(frase)
+        console.log("Empieza por la letra l?  "+expr1.test(frase))
+        console.log("Acaba con la letra o?  "+expr2.test(frase))
+        console.log("hay palabras de dos caracteres?  "+expr3.test(frase))
+         console.log(frase2)
+        console.log("?  "+expr4.test(frase))
+        console.log("palabras que empiezar por a y terminan por r?  "+expr5.test(frase2))
+    </script>
+</body>
+</html>

@@ -6,23 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let txt=prompt("Introduce un texto: ")
-        let apariciones= new Map()
-        
-       
-        for(letra of txt){
-            if(apariciones.has(letra)){
-                 apariciones.set(letra,apariciones.get(letra)+1)
-            } else {
-                apariciones.set(letra, 1);
-            }
-        }
-        for([caracter, num] of apariciones){
-            document.write(`Caracter: ${caracter} -->Numero de apariciones:  ${num} `+"<br>")
-        }
-        
+   <script>
+    // Solicita al usuario que introduzca un texto mediante un cuadro de diálogo
+    let txt = prompt("Introduce un texto: ")
 
-    </script>
+    // Crea un nuevo Map para almacenar las apariciones de cada carácter
+    let apariciones = new Map()
+
+    // Recorre cada letra del texto introducido
+    for (letra of txt) {
+        // Si el carácter ya existe en el Map, incrementa su contador
+        if (apariciones.has(letra)) {
+            apariciones.set(letra, apariciones.get(letra) + 1)
+        } else {
+            // Si es la primera vez que aparece, lo añade al Map con valor 1
+            apariciones.set(letra, 1);
+        }
+    }
+
+    // Recorre el Map y muestra cada carácter junto con el número de apariciones
+    for ([caracter, num] of apariciones) {
+        document.write(`Caracter: ${caracter} -->Numero de apariciones:  ${num} ` + "<br>")
+    }
+</script>
 </body>
 </html>

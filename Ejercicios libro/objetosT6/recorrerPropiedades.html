@@ -21,8 +21,9 @@
             }
         };
 
-        for (let prop in punto) {
+        for (let prop in punto) {//esta función recorre todas las propiedades del objeto 'punto'
             if(typeof punto[prop]!="function"){
+            // Si la propiedad no es una función, muestra su nombre y valor
             console.log(`${prop} tiene el valor ${punto[prop]}`);
             }
         }

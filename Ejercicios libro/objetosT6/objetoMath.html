@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        . Constantes de Math
+Las constantes son valores matemáticos ya definidos. Por ejemplo:
+
+Math.PI: El valor de π (Pi), aproximadamente 3.14159.
+Math.E: El número de Euler, aproximadamente 2.718.
+Math.LN2: Logaritmo natural de 2.
+Math.LN10: Logaritmo natural de 10.
+Math.LOG2E: Logaritmo base 2 de e.
+Math.LOG10E: Logaritmo base 10 de e.
+Math.SQRT1_2: 1 dividido por la raíz cuadrada de 2.
+Math.SQRT2: Raíz cuadrada de 2.
+Ejemplo de uso:
+
+
+*/
+// Usando Math.PI para calcular la circunferencia de un círculo
+function Circulo(radio) {
+    this.radio = radio;
+    this.calcularCircunferencia = function() {
+        return 2 * Math.PI * this.radio;
+    }
+}
+
+let c = new Circulo(10);
+console.log(c.calcularCircunferencia()); // 62.83185307179586
+
+/*
+2. Métodos de Math
+Los métodos son funciones que te ayudan a realizar cálculos matemáticos:
+
+Math.abs(n): Valor absoluto de n.
+Math.acos(n): Arco coseno de n.
+Math.asin(n): Arco seno de n.
+Math.atan(n): Arco tangente de n.
+Math.ceil(n): Redondea hacia arriba.
+Math.floor(n): Redondea hacia abajo.
+Math.round(n): Redondea al entero más cercano.
+Math.cos(n): Coseno de n.
+Math.sin(n): Seno de n.
+Math.tan(n): Tangente de n.
+Math.exp(n): e elevado a n.
+Math.log(n): Logaritmo natural de n.
+Math.max(a, b): Devuelve el mayor.
+Math.min(a, b): Devuelve el menor.
+Math.pow(a, b): a elevado a la potencia b.
+Math.sqrt(n): Raíz cuadrada de n.
+Math.random(): Número aleatorio entre 0 y 1 con decimales.
+Ejemplo de uso:
+
+*/
+console.log(Math.abs(-5));       // 5
+console.log(Math.ceil(2.3));     // 3
+console.log(Math.floor(2.8));    // 2
+console.log(Math.round(2.5));    // 3
+console.log(Math.max(4, 7));     // 7
+console.log(Math.min(4, 7));     // 4
+console.log(Math.pow(2, 3));     // 8
+console.log(Math.sqrt(16));      // 4
+console.log(Math.random());      // Ejemplo: 0.123456789
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Definimos una constante llamada grupo que almacena un objeto
+        const grupo={ // esto es un objeto que representa un grupo musical
+            // Propiedad nombre: nombre del grupo
+            nombre: "Estopa",
+            // Propiedad componentes: array con los nombres de los integrantes
+            componentes:["David Muñoz","José Muñoz"],
+            // Propiedad discos: array con los títulos de los discos
+            discos:["Estopa","Destrangis","La calle es tulla","Allenrock"],
+            // Propiedad estilio: estilo musical del grupo
+            estilio: "Rumba"
+        }
+        //Convierte el objeto 'grupo' en una cadena de texto en formato JSON y la almacena en la variable 'grupoTexto' -->
+           let grupoTexto=JSON.stringify(grupo)//
+
+           // Convierte la cadena JSON 'grupoTexto' de nuevo a un objeto y lo almacena en la variable 'grupo2'
+           let grupo2=JSON.parse(grupoTexto)//
+
+        // Mostramos el objeto grupo como una cadena JSON en la consola
+       //console.log(JSON.stringify(grupo))
+    // Mostramos el objeto grupo2 en la consola
+    console.log(grupo2)//
+    </script>
+</body>
+</html>
