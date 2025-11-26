@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Acceso prohibido
+        • Crea, una página web que muestre el texto "Bienvenido" pero si la hora es de 9:00 a 14:00 y
+        es un día que no es ni sábado ni domingo.
+        • Si no se cumple esa premisa, entonces se mostrará el texto "Página cerrada"
+        */
+
+        let fecha=new Date()
+        //let fecha=new Date(2025,11,26,14,25,12,45)//Año,mes,dia,hora,minutos,segundos,milisegundos
+        let dia=fecha.getDay()// devuelve el dia de la semana 0-6, 0 es el domingo
+        let hora=fecha.getHours()//devuelve la hora 0-23
+        let minutos=fecha.getMinutes()//devuelve los minutos 0-59
+        if (dia>0 && dia<6 && hora>=9 && hora<14 && minutos>=0){
+            document.write("Bienvenido")
+        }else{
+            document.write("Pagina cerrada")
+        }
+    </script>
+</body>
+</html>

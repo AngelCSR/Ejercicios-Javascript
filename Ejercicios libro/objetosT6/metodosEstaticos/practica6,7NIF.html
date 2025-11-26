@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+                Crea una aplicación web que sirva para validar NIFs indicando si es correcto o no.
+        • Un NIF consta de una posible primera letra que puede ser una X, una Y o una Z. Puede no
+        haber letra y entonces habrá un número.
+        • Después habrá siete números más.
+        • Finalmente habrá una letra que cumple una fórmula.UNIDAD 
+        • La fórmula de la letra consiste en dividir los números del N1F entre 23 y tomar el resto.
+        Cuando la primera cifra es una X, se cambia por el número 0 para hacer este cálculo. La Y se
+        cambia por el número 1 y la Z por el número 2. El resto obtenido se comprueba en esta una serie
+        */
+         let expr1=/^[0-9]{8}[A-Z]$/i
+        let nif
+
+         do{
+              nif=prompt("Introduce uu DNI: ")
+         }while(expr1.test(nif)==false)
+       
+       
+
+        let num=parseInt(nif)//Esto convierte el string en un numero y si tiene letras las ignora
+        let letras="TRWAGMYFPDXBNJZSQVHLCKE"
+
+        let resto=num%23
+        if (nif[8].toUpperCase()==letras[resto]){
+            alert("Letra correcta: "+letras[resto])
+        }else{
+            alert("Algo falla.La letra deberia ser: "+letras[resto])
+        }
+
+        
+
+
+
+        
+
+        
+    </script>
+</body>
+</html>

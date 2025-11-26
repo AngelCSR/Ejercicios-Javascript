@@ -32,11 +32,16 @@
 
         console.log(frase)
         console.log("Empieza por la letra l?  "+expr1.test(frase))
+        console.log("Empieza por la letra l?  "+frase.match(expr1))
         console.log("Acaba con la letra o?  "+expr2.test(frase))
+        console.log("Acaba con la letra o?  "+frase.match(expr2))
         console.log("hay palabras de dos caracteres?  "+expr3.test(frase))
+         console.log("hay palabras de dos caracteres?  "+frase.match(expr3))
          console.log(frase2)
         console.log("?  "+expr4.test(frase))
+         console.log("?  "+frase.match(expr4))
         console.log("palabras que empiezar por a y terminan por r?  "+expr5.test(frase2))
+         console.log("palabras que empiezar por a y terminan por r?  "+frase2.match(expr5))
     </script>
 </body>
 </html>
