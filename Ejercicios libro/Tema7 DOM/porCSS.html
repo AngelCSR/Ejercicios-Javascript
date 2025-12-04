@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <ul id="provicias">
+        <li class="Andalucia">Cadiz</li>
+        <li class="Andalucia">Almería</li>
+        <li id="huelva" class="Andalucia">Huelva</li>
+        <li class="Andalucia">Malaga</li>
+        <li class="Extremadura">Badajoz</li>
+        <li class="Extremadura">Caceres</li>
+        <li class="castillaLeon">Buergos</li>
+        <li class="castillaLeon">Avila</li>
+        <li class="catalunna">Lleida</li>
+        <li class="catalunna">Tarragona</li>
+            
+     </ul>
+    
+     <p id="1"></p>
+    <p id="2"></p>
+    <p id="3"></p>
+    <p id="4"></p>
+     <script>
+        let lista=document.getElementById("provicias")//si usamos queryselector o queryselectorall
+        //tenemos que poner el # delante del id para seleccionarlo
+        document.getElementById("huelva").setAttribute("class","Extremadura")//cambiamos la clase de huelva
+        document.getElementById("huelva").removeAttribute("class")//eliminamos la clase de huelva
+        let andalucia=lista.getElementsByClassName("Andalucia")
+        let extremadura=lista.querySelectorAll(".Extremadura")//si no se pone el punto antes 
+        // de la clase no funciona y si no pones all solo te devuelve el primer elemento que
+        //  encuentra
+        let castillaLeon=lista.getElementsByClassName("castillaLeon")
+        let catalunna=lista.getElementsByClassName("catalunna")
+
+        let p1=document.getElementById("1")
+        let p2=document.getElementById("2")
+        let p3=document.getElementById("3")
+        let p4=document.getElementById("4")
+
+        p1.innerText=`Provincias de Andalucía son : `
+        p2.innerText=`Provincias de Extremadura son: `
+        p3.innerText=`Provincias de Castilla y León son: `
+        p4.innerText=`Provincias de Cataluña son:  `
+
+        for(let i=0;i<andalucia.length;i++){
+            p1.innerText+=andalucia[i].innerText+" ,"
+        }
+        for(let i=0;i<extremadura.length;i++){
+            p2.innerHTML+=extremadura[i].innerHTML+" , "
+        }
+        for(let i=0;i<castillaLeon.length;i++){
+            p3.innerHTML+=castillaLeon[i].innerHTML+" , "
+        }
+        for(let i=0;i<catalunna.length;i++){
+            p4.innerText+=catalunna[i].innerText+" ,"
+        }
+
+        console.log("Provincias de Andalucía:")
+        console.log(andalucia)
+        console.log("Provincias de Extremadura: ")
+        console.log(extremadura)
+        console.log("Provincias de Castilla y León:")
+        console.log(castillaLeon)
+        console.log("Provincias de Cataluña:")
+        console.log(catalunna)
+
+
+
+    </script>
+    
+</body>
+</html>

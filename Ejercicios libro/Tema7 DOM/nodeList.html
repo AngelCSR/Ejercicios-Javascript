@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+     <p></p>
+    <script>
+        let parrafos= document.getElementsByTagName("p")//devuelve una colección HTML o nodelist (similar a un array) con todos los párrafos
+        parrafos[0].innerText="Primer párrafo modificado desde JavaScript"
+        parrafos[1].innerText="Segundo párrafo modificado desde JavaScript"
+        parrafos[2].innerText="Tercer párrafo modificado desde JavaScript"
+        for(let i=3;i<parrafos.length;i++){
+            parrafos[i].innerText=`Párrafo ${i+1} modificado desde JavaScript usando un bucle`
+        }
+        //Otra forma de recorrer una nodelist es con un bucle for...in
+
+        /*for (let i in parrafos){
+            parrafos[i].innerText=`Párrafo ${i+1} modificado desde JavaScript usando un bucle`
+        }*/
+       
+
+
+
+    </script>
+    
+</body>
+</html>
