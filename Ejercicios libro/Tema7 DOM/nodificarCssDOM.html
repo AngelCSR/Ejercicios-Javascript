@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="peninsula iberica  norte oeste">España</p>
+    <p>Portugal</p>
+    <p>Francia</p>
+    <p>Italia</p>
+    <p>Alemania</p>
+
+    <script>
+        let parrafos=document.getElementsByTagName("p")
+        //tambien se puede
+        //let parrafos= document.querySelectorAll("p")  
+        parrafos[0].style.color="red"
+        parrafos[1].style.color="green"
+        parrafos[2].style.color="blue"
+        parrafos[3].style.color="orange"
+        parrafos[4].style.color="yellow"
+
+
+        parrafos[0].classList.add("pais","europa","sur")//añade clases al primer párrafo
+        parrafos[0].classList.remove("norte")//elimina la clase norte
+        parrafos[0].classList.toggle("oeste")//si la clase oeste existe la elimina, si no existe la añade
+        console.log(parrafos[0].className)//devuelve la clase del primer párrafo
+        for(let clase of parrafos[0].classList){
+            console.log(clase)//devuelve cada una de las clases del primer párrafo
+            document.write(clase+"<br>")
+        }   
+        
+        
+    </script>
+</body>
+</html>

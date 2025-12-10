@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>Pedro</li>
+        <li>Daniel</li>
+        <li>Angel</li>
+        <li>Diego</li>
+        <li>Adrian</li>
+    </ol>
+    <script>
+         let nuevoElemento=document.createElement("li")//crea un nuevo elemento li
+        nuevoElemento.innerText="Marius"//añade texto al nuevo elemento
+        
+
+        html=document.getElementsByTagName("html")
+        document.write("Los hijos del elemeto HTML son: <br>")
+        for(let hijo of html[0].childNodes){
+            document.write(hijo.nodeName+"<br>")//devuelve los hijos del elemento html
+        }
+
+        //navegar por el DOM para obtener la lista ordenada con .querySelector
+        
+        let lista=document.querySelector("ol")
+        lista.appendChild(nuevoElemento)//añade el nuevo elemento al final de la lista
+        document.write("Los hijos del elemento OL son: <br>")
+        for(let hijo of lista.childNodes){
+            document.write(hijo.textContent+"<br>")//devuelve los hijos del elemento ol  
+        }
+        let primerHijo=lista.firstElementChild//primer hijo del elemento ol
+        document.write("Los hermanos de la lista OL son: <br> ")
+        do{
+            document.write(primerHijo.textContent+"<br>")//devuelve cada uno de los hermanos del primer hijo
+            primerHijo=primerHijo.nextSibling//hermano siguiente 
+        }while(primerHijo!=null);//hasta que no haya más hermanos
+
+        document.write("El padre de la lista es: <br>")
+        document.write(lista.parentNode.nodeName)//devuelve el padre de la lista
+        
+       
+       
+
+    </script>
+</body>
+</html>

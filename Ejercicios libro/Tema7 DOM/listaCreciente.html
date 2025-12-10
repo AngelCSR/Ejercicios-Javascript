@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="aniadirElemento()" autofocus>Nuevo elemento</button>
+    
+    
+    <ul>
+    
+    </ul>
+
+    <script>
+        let boton=document.querySelector("button")
+        let lista=document.querySelector("ul")
+        function aniadirElemento(){
+            let nuevoElemento=document.createElement("li")//crea un nuevo elemento li
+            //let numeroElementos=lista.childElementCount+1//número de elementos de la lista +1
+            let texto=prompt("Introduce el texto del nuevo elemento:")
+            nuevoElemento.innerText=texto//+" "+numeroElementos//añade texto al nuevo elemento
+            lista.appendChild(nuevoElemento)//añade el nuevo elemento al final de la lista
+            //boton.autofocus=true//vuelve a poner el foco en el botón
+        }
+    </script>
+</body>
+</html>
