@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Funcion a la que le pasas una seie de parametros indeterminados y te los muestra uno por uno en la consola*/
+        
+        function mostrarParametros(...parametros){
+            for (let i=0;i<parametros.length;i++){
+                console.log("Parametro "+(i+1)+": "+parametros[i])
+            }
+        }
+        let datos=prompt("Introduce varios parametros separados por comas")
+        let arrayDatos=datos.split(",")
+        mostrarParametros(...arrayDatos)
+
+    </script>
+</body>
+</html>

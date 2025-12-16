@@ -21,7 +21,36 @@ diendo del criterio que establezcamos.
 establecidos en la función callback.
 • Pruébala con varios arrays y funciones de filtro que establezcas a medida.
         */
+        // Definimos la función 'filtro' que recibe un array y una función callback
+        function filtro(array, callback) {
+            const resultado = []; // Creamos un array vacío para guardar los elementos que cumplen el filtro
+            for (let i = 0; i < array.length; i++) { // Recorremos todos los elementos del array
+            if (callback(array[i])) { // Si el callback devuelve true para el elemento actual
+                resultado.push(array[i]); // Lo añadimos al array resultado
+            }
+            }
+            return resultado; // Devolvemos el nuevo array filtrado
+        }
 
+        // Ejemplo 1: Filtrar números pares
+        const numeros = [1, 2, 3, 4, 5, 6];
+        // Usamos la función filtro con un callback que comprueba si el número es par
+        const pares = filtro(numeros, function(num) {
+            return num % 2 === 0;
+        });
+        console.log('Números pares:', pares);
+
+        // Ejemplo 2: Filtrar palabras de más de 4 letras
+        const palabras = ['sol', 'luna', 'estrella', 'cielo', 'mar'];
+        // Usamos la función filtro con un callback que comprueba la longitud de la palabra
+        const largas = filtro(palabras, palabra => palabra.length > 4);
+        console.log('Palabras largas:', largas);
+
+        // Ejemplo 3: Filtrar valores mayores que 10
+        const valores = [5, 12, 8, 20, 3];
+        // Usamos la función filtro con un callback que comprueba si el valor es mayor que 10
+        const mayores = filtro(valores, v => v > 10);
+        console.log('Valores mayores que 10:', mayores);
 
     </script>
 </body>

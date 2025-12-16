@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Funcion que reciba una serie de parametros indeterminados que sean numeros y 
+        devuelve el array de numeros ordenados*/
+        let datos=prompt("Introduce varios numeros separados por comas")
+        let arrayDatos=datos.split(",")
+
+        function ordenarNumeros(...numeros){
+            numeros.sort(function(a,b){return a-b})//funcion de comparacion para ordenar numeros que lo que hace es restar a-b para ver cual es mayor y la forma de hacerlo con una funcion anonima seria function(a,b){return a-b}
+            return numeros
+        }
+        console.log(ordenarNumeros(...arrayDatos))
+    </script>
+</body>
+</html>

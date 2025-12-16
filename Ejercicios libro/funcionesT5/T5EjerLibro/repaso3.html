@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Funcion que pida texto separado por comas y con el metodo map cree un 
+        array en el que muestre las palabras en mayusculas y otr en minusculas/**/
+        function cambiarArrays(){
+        let datos=prompt("Introduce varios textos separados por comas")
+        let arrayDatos=datos.split(",")
+        let datoMinuscula=arrayDatos.map(palabra=>palabra.toLowerCase())
+        let datoMayuscula=arrayDatos.map(palabra=>palabra.toUpperCase())
+        console.log("Array en minusculas: "+datoMinuscula)
+        console.log("Array en mayusculas: "+datoMayuscula)
+
+        }
+        cambiarArrays()
+
+    </script>
+</body>
+</html>

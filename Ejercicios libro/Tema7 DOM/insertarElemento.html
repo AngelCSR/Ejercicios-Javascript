@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="insertar()">Insertar elemento</button>
+    <button onclick="quitar()">Quitar elemento</button>
+    <button onclick="remplazar()">Remplazar elemento</button>
+    <div>
+        <p>Lunes</p>
+        <p>Martes</p>
+        <p>Miercoles</p>
+        <p>Jueves</p>
+    </div>
+
+    <script>
+        let parrafos=document.querySelector("div")
+        function insertar(){
+
+            
+            let p=document.createElement("p")
+            p.innerText=prompt("Que quieres insertar? ")
+            
+            let posicion=parseInt(prompt("Indica la posicion "))
+            //accedemos al elemento actual que esta en esa posicion
+            
+            let elementoActual=parrafos.children[posicion-1]
+            parrafos.insertBefore(p,elementoActual)
+             // parrafos.replaceChild(p,elementoActual) //Esto cambia o remplaza uno por otro
+
+
+
+        }
+         function remplazar(){
+ 
+            let p=document.createElement("p")
+            p.innerText=prompt("Que quieres insertar? ")
+            
+            let posicion=parseInt(prompt("Indica la posicion "))
+            //accedemos al elemento actual que esta en esa posicion
+            
+            let elementoActual=parrafos.children[posicion-1]
+            parrafos.replaceChild(p,elementoActual) //Esto cambia o remplaza uno por otro
+
+        }
+        function quitar(){
+             
+            let posicion=parseInt(prompt("Indica la posicion del elemento a borrar:  "))
+            //accedemos al elemento actual que esta en esa posicion
+            
+            let elementoActual=parrafos.children[posicion-1]
+            parrafos.removeChild(elementoActual) //Esto borra el elemento
+
+        }
+
+
+    </script>
+</body>
+</html>

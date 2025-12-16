@@ -33,6 +33,32 @@
         let nombreMasCorto=alumnos.filter(function(alumno){
             return alumno.length===Math.min(...alumnos.map(a=>a.length));//... es el operador spread que convierte el array en una lista de argumentos
         }); 
+        /*
+        Claro, te explico cada parte de este fragmento de código paso a paso:
+
+1. alumnos.filter(function(alumno) { ... })
+alumnos: Es un array (lista) que contiene nombres de alumnos (por ejemplo: ["Ana", "Luis", "Pedro"]).
+.filter(...): Es un método de los arrays en JavaScript que crea un nuevo array con todos los elementos que cumplen una condición (la función que le pasas).
+function(alumno) { ... }: Es la función que se ejecuta para cada elemento del array. Aquí, alumno es cada nombre dentro del array alumnos.
+2. alumno.length === ...
+alumno.length: Calcula la cantidad de caracteres del nombre actual.
+3. alumnos.map(a => a.length)
+.map(a => a.length): Crea un nuevo array con la longitud de cada nombre.
+Ejemplo: Si alumnos = ["Ana", "Luis", "Pedro"], entonces alumnos.map(a => a.length) devuelve [3, 4, 5].
+4. Math.min(...alumnos.map(a => a.length))
+Math.min(...): Devuelve el valor mínimo de una lista de números.
+... (operador spread): Convierte el array de longitudes en una lista de argumentos para Math.min.
+Ejemplo: Math.min(...[3, 4, 5]) es igual a Math.min(3, 4, 5), que devuelve 3.
+5. ¿Qué hace todo junto?
+El filtro compara la longitud de cada nombre con la longitud mínima encontrada en el array.
+Solo los nombres que tengan la longitud más corta serán incluidos en el nuevo array nombreMasCorto.
+6. Resultado final
+Si alumnos = ["Ana", "Luis", "Pedro", "Sol"],
+entonces nombreMasCorto será ["Ana", "Sol"] porque ambos tienen 3 letras, que es la longitud mínima.
+Resumen:
+Este código busca todos los nombres más cortos en el array alumnos y los guarda en nombreMasCorto.
+
+*/
         //con arrow function
 
         let nombreMasCorto2=alumnos.filter(alumno=>alumno.length===Math.min(...alumnos.map(a=>a.length)));//... es el operador spread que convierte el array en una lista de argumentos
