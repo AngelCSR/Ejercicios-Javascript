@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mes=parseInt(prompt("Escribe el mes(1-12)"))-1
+        let anio=parseInt(prompt("Escribe el año(4 cifras)"))
+        let fecha=new Date(anio,mes,1)
+
+        let dia=fecha.getDay()
+
+        let dias=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+        let dias2=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+
+        document.write("Este mes empezo en "+dias[dia])
+
+        
+       
+
+
+    </script>
+</body>
+</html>

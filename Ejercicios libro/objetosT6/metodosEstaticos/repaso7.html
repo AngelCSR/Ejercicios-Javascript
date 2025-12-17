@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt=prompt("Escribe una feccha")
+        let exp1=/^((0?|[12])[0-9]|3[01])[-\/](0?\d|1[0-2])[-\/]\d{4}$/ //0-31/1-12/1111 l ? indica que puede estar o no
+        let exp2=/00$ / 
+        let exp3=/[-\/]00[-\/]$ / 
+        if(exp1.test(txt)){
+            
+            document.write("Fecha Correcta")
+            
+        }else{
+            document.write("Fecha Incorrecta")
+        }
+    </script>
+</body>
+</html>

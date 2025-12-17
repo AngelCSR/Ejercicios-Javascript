@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dia=parseInt(prompt("Escribe el dia(1-31)"))
+        let mes=parseInt(prompt("Escribe el mes(1-12)"))-1
+        let anio=parseInt(prompt("Escribe el año(4 cifras)"))
+
+        let fecha=new Date(anio,mes,dia)
+        let diaSemana=fecha.getDay()
+        switch (diaSemana){
+            case 0:
+                dia="Domingo"
+                break
+            case 1:
+                dia="lunes"
+                break
+            case 2:
+                dia="Martes"
+                break
+            case 3:
+                dia="Miercoles"
+                break
+            case 4:
+                dia="Jueves"
+                break
+            case 5:
+                dia="Viernes"
+                break
+            case 6:
+                dia="Sabado"
+                break
+            default:
+                dia="error"
+        }
+        document.write("Ese dia fue: "+dia)
+    </script>
+</body>
+</html>

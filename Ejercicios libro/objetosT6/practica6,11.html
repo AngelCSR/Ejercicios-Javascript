@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // ================================
+    // FUNCIÓN CONSTRUCTORA CARTA
+    // ================================
+    function Carta(palo, valor) {
+
+        // Validamos que el palo sea un número entre 1 y 4
+        if (palo > 0 && palo < 5 && typeof(palo) === "number") {
+            this.palo = parseInt(palo); // Guardamos el palo
+        } else {
+            return null; // Si no es válido, no se crea la carta
+        }
+
+        // Validamos que el valor sea un número entre 1 y 10
+        if (valor > 0 && valor < 11 && typeof(valor) === "number") {
+            this.valor = parseInt(valor); // Guardamos el valor
+        } else {
+            return null; // Si no es válido, no se crea la carta
+        }
+
+        // ================================
+        // MÉTODO PARA CAMBIAR EL VALOR DE LA CARTA
+        // ================================
+        this.darValor = function(palo, valor) {
+
+            // Volvemos a validar el palo
+            if (palo > 0 && palo < 5 && typeof(palo) === "number") {
+
+                // Volvemos a validar el valor
+                if (valor > 0 && valor < 11 && typeof(valor) === "number") {
+                    this.palo = parseInt(palo);   // Cambiamos el palo
+                    this.valor = parseInt(valor); // Cambiamos el valor
+                }
+            }
+        }
+
+        // ================================
+        // MÉTODO toString → DEVUELVE TEXTO
+        // ================================
+        this.toString = function() {
+            let texto = "";
+
+            // Convertimos el valor numérico en nombre
+            switch (this.valor) {
+                case 1:
+                    texto = "As";
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    texto = this.valor; // Números normales
+                    break;
+                case 8:
+                    texto = "Sota";
+                    break;
+                case 9:
+                    texto = "Caballo";
+                    break;
+                case 10:
+                    texto = "Rey";
+                    break;
+                default:
+                    texto = "Valor erróneo";
+            }
+
+            texto += " de ";
+
+            // Convertimos el palo numérico en nombre
+            switch (this.palo) {
+                case 1:
+                    texto += "Oros";
+                    break;
+                case 2:
+                    texto += "Espadas";
+                    break;
+                case 3:
+                    texto += "Bastos";
+                    break;
+                case 4:
+                    texto += "Copas";
+                    break;
+                default:
+                    texto += "Palo erróneo";
+            }
+
+            // Devolvemos el texto completo
+            return texto;
+        }
+    }
+
+    // ================================
+    // FUNCIÓN CONSTRUCTORA BARAJA
+    // ================================
+    function Baraja() {
+
+        // Array que almacenará las 40 cartas
+        this.cartas = [];
+
+        // Bucle para recorrer los palos (1 a 4)
+        for (let i = 1; i < 5; i++) {
+
+            // Bucle para recorrer los valores (1 a 10)
+            for (let j = 1; j < 11; j++) {
+
+                // Creamos una carta y la añadimos a la baraja
+                this.cartas.push(new Carta(i, j));
+            }
+        }
+
+        // ================================
+        // MÉTODO toString → MUESTRA LA BARAJA
+        // ================================
+        this.toString = function() {
+
+            // Recorremos todas las cartas
+            for (let c of this.cartas) {
+
+                // Mostramos cada carta por consola
+                console.log(c.toString());
+            }
+        }
+
+        // ================================
+        // MÉTODO PARA BARAJAR LAS CARTAS
+        // ================================
+        this.barajar = function() {
+
+            // Repetimos el proceso 100 veces
+            for (let i = 0; i < 100; i++) {
+
+                // Número aleatorio entre 0 y 39
+                let num = parseInt(Math.random() * 40);
+
+                // Sacamos la carta de esa posición
+                let carta = this.cartas.splice(num, 1)[0];
+
+                // La colocamos al final del array
+                this.cartas.push(carta);
+            }
+        }
+    }
+
+    // ================================
+    // PROGRAMA PRINCIPAL
+    // ================================
+
+    // Creamos una baraja nueva
+    let baraja1 = new Baraja();
+
+    // Mostramos la baraja sin mezclar
+    console.log("----------------Sin Barajear--------------");
+    baraja1.toString();
+
+    // Barajamos las cartas
+    baraja1.barajar();
+
+    // Mostramos la baraja mezclada
+    console.log("----------------Barajeada--------------");
+    baraja1.toString();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Pedimos el mes al usuario (1–12)
+// Restamos 1 porque en JavaScript los meses van de 0 a 11
+let mes = parseInt(prompt("Escribe el mes (1-12)")) - 1
+
+// Pedimos el año (4 cifras)
+let anio = parseInt(prompt("Escribe el año (4 cifras)"))
+
+// Creamos una fecha con el primer día del mes indicado
+// Día 1 porque queremos saber qué día de la semana empieza el mes
+let fecha = new Date(anio, mes, 1)
+
+// getDay() devuelve el día de la semana:
+// 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+let primerDia = fecha.getDay()
+
+// Obtenemos cuántos días tiene el mes
+// Día 0 del mes siguiente = último día del mes actual
+let diasMes = new Date(anio, mes + 1, 0).getDate()
+
+// Array con los nombres de los días de la semana
+let diasSemana = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado"
+]
+
+// Empezamos a crear la tabla del calendario
+document.write("<table border='1' style='border-collapse:collapse;text-align:center'>")
+
+// ===== FILA DE ENCABEZADOS =====
+document.write("<tr>")
+for (let d of diasSemana) {
+    document.write("<th>" + d + "</th>")
+}
+document.write("</tr>")
+
+// Variable para llevar el control del día que se va mostrando
+let diaActual = 1
+
+// Creamos la primera fila del calendario
+document.write("<tr>")
+
+// ===== ESPACIOS VACÍOS ANTES DEL DÍA 1 =====
+// Si el mes empieza en miércoles, por ejemplo,
+// se dejan vacías las celdas de domingo, lunes y martes
+for (let i = 0; i < primerDia; i++) {
+    document.write("<td></td>")
+}
+
+// ===== PRIMERA SEMANA =====
+for (let i = primerDia; i < 7; i++) {
+    document.write("<td>" + diaActual + "</td>")
+    diaActual++
+}
+document.write("</tr>")
+
+// ===== RESTO DE SEMANAS =====
+// Mientras queden días por mostrar
+while (diaActual <= diasMes) {
+
+    document.write("<tr>")
+
+    // Creamos 7 columnas (una semana completa)
+    for (let i = 0; i < 7; i++) {
+
+        // Si aún hay días del mes, los mostramos
+        if (diaActual <= diasMes) {
+            document.write("<td>" + diaActual + "</td>")
+            diaActual++
+        }
+        // Si ya no hay más días, dejamos la celda vacía
+        else {
+            document.write("<td></td>")
+        }
+    }
+
+    document.write("</tr>")
+}
+
+// Cerramos la tabla
+document.write("</table>")
+
+/*-------------------------------------------------------------------------*/
+function tabla(anio, mes) {
+    const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    const primerDia = new Date(anio, mes - 1, 1).getDay(); // día inicio del mes
+    const diasMes = new Date(anio, mes, 0).getDate();      // total de días del mes
+
+    document.write("<table border='1'>");
+    document.write("<tr>");
+    diasSemana.forEach(dia => document.write("<th>" + dia + "</th>"));
+    document.write("</tr>");
+
+    let dia = 1;
+    for (let i = 0; i < 6; i++) {
+        document.write("<tr>");
+        for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < primerDia || dia > diasMes) {
+                document.write("<td></td>");
+            } else {
+                document.write("<td>" + dia + "</td>");
+                dia++;
+            }
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+}
+
+// Ejemplo de uso
+tabla(2025, 12); // diciembre 2025
+
+</script>
+
+</body>
+</html>
