@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="reanudarCreacionParrafos()" >Parar creación de parrafos</button>
+    <div id="parrafos"></div>
+    <script>
+     let parrafo=document.getElementById("parrafos")
+     let i=1
+     let continuar=true
+        let intervalo=setInterval(() => {
+            
+                        
+            let p=document.createElement("p")
+            p.textContent="Parrafo nuevo añadido con setInterval numero "+i
+            i++
+            parrafo.appendChild(p)
+            
+        },1000)
+      
+        function reanudarCreacionParrafos() {
+            let boton = document.querySelector("button");
+            if (!continuar) {
+                intervalo = setInterval(() => {
+                    let p = document.createElement("p");
+                    p.textContent = "Parrafo nuevo añadido con setInterval numero " + i;
+                    i++;
+                    parrafo.appendChild(p);
+                }, 1000);
+                boton.innerText = "Parar creación de parrafos";
+                continuar = true;
+            } else {
+                clearInterval(intervalo);
+                boton.innerText = "Continuar";
+                continuar = false;
+            }
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearTimeout(alarma1)">Parar</button>
+    <button onclick="clearTimeout(alarma2)">Parar alarma2</button>
+    <div id="parrafos"></div>
+    <script>
+            // Crea un temporizador que, después de 3 milisegundos (por defecto), 
+            // muestra una alerta con el mensaje "Tiempo finalizado"
+        //let alarma1=setTimeout(()=>alert("Alarma 1"),3000)
+        // let alarma2=setTimeout(()=>alert("Alarma 2"),5000)
+        let parrafo=document.getElementById("parrafos")
+        let alarma1=setTimeout(()=>{//esta funcion se ejecuta despues de 2 segundos 
+                                    // y crea un parrafo y lo añade al div
+            
+            let p=document.createElement("p")
+            p.textContent="Alarma 1 ha sonado"
+            parrafo.appendChild(p)
+            
+        },2000)
+         let alarma2=setTimeout(()=>{
+            
+            let p=document.createElement("p")
+            p.textContent="Alarma 2 ha sonado"
+            parrafo.appendChild(p)
+            
+        },2000)
+       
+    </script>
+    
+</body>
+</html>
