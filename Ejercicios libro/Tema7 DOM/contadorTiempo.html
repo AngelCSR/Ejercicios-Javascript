@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button id="btn" onclick="paraContinuar()" >Iniciar</button>
+        <h1 id="contador">0</h1>
+        <script>
+            let contador=document.getElementById("contador")
+            let boton=document.getElementById("btn")
+            let conta=false
+            let intervalo
+
+             function paraContinuar(){
+                if(!conta){
+                    intervalo=setInterval(() => {
+                        contador.textContent=parseInt(contador.textContent)+1
+                    }, 1000);
+                    boton.innerText="Parar"
+                    conta=true
+                }else{
+                    clearInterval(intervalo)
+                    boton.innerText="Continuar"
+                    conta=false
+                }
+            }
+
+        </script>
+
+    
+</body>
+</html>
