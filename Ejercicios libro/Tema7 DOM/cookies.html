@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="ponerCookies()">Poner Cookies</button>
+    <button onclick="borrarCookies()">Borrar Cookies</button>
+    <button onclick=" console.log(document.cookie)">Mostrar cookies</button>
+
+    <script>
+
+        function ponerCookies(){
+            let nombre = prompt("Introduce tu nombre:")
+            let apellidos = prompt("Introduce tus apellidos:")
+            let localidad = prompt("Introduce tu localidad:")
+            let hoy = new Date();
+            let milisegundos = hoy.getTime() + 3600 * 1000; // 1 hora en milisegundos
+            let caducidad = new Date(milisegundos);
+            caducidad = caducidad.toUTCString(); // Convierte la fecha a formato UTC
+
+            document.cookie = "nombre = " + nombre + "; expires = " + caducidad// Esto crea una cookie llamada nombre con el valor introducido por el usuario
+            document.cookie = "apellidos" + " = " + apellidos + "; expires = " + caducidad // Esto crea una cookie llamada apellidos con el valor Garcia
+            document.cookie = "localidad" + " = " + localidad // Esto crea una cookie llamada localidad con el valor Madrid
+       
+            //console.log(document.cookie)// Muestra todas las cookies en formato clave=valor separadas por ;
+
+        }
+
+        function borrarCookies(){
+            let hoy = new Date();
+            document.cookie = "nombre = ; expires = " + hoy.toUTCString() // Esto borra la cookie nombre
+            document.cookie = "apellidos = ; expires = "+'' + hoy.toUTCString() // Esto borra la cookie apellidos
+            document.cookie = "localidad = ; expires = " + hoy.toUTCString() // Esto borra la cookie localidad
+       
+            //console.log(document.cookie)// Muestra todas las cookies en formato clave=valor separadas por ;
+
+        }
+
+    </script>
+</body>
+
+</html>

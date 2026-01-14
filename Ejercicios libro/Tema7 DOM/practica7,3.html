@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let aceptar = confirm("¿Aceptas las cookies de este sitio web?")
+        if (aceptar) {
+            //AQUI GUARDAMOS LAS COOKIES y vamos sumando las visitas
+
+            if (document.cookie == "") {
+                //aqui creamos la cookie por primera vez
+                document.cookie = "visitas=1";
+                console.log("visitas=1");
+
+            } else {
+                let arrayCookies = document.cookie.split("; ")
+                for (let cokie of arrayCookies) {
+                    let [nombre, valor] = cokie.split("=")
+                    if (nombre === "visitas") {
+                        document.cookie = "visitas=" + (parseInt(valor) + 1)
+                        console.log("visitas=" + (parseInt(valor) + 1))
+                    }
+                }
+            }
+        } else {
+            //el usuario no acepta las cookies
+            console.log("El usuario no acepta las cookies")
+        }
+    </script>
+</body>
+
+</html>

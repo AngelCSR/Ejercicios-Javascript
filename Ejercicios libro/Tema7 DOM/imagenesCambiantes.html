@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="cambiarImagen()" onmouseover="cambiarImagen()">Cambiar Imagen</button>
+    <button>Siguiente Imagen</button><br><br>
+    <img src="imagenes/camino.jpg" alt="" width="500px" id="miImagen">
+
+    <script>
+        imagenes = [
+            "camino.jpg",
+            "molino3.jpeg",
+            "molinos1.jpeg",
+            "molinos.jpeg",
+            "parque.jpeg"
+        ]
+
+        let numImg = -1; //para que la primera vez que se pulse el boton no coincida con ninguna imagen
+
+
+
+        function cambiarImagen() {
+
+            let indice = parseInt(Math.floor(Math.random() * imagenes.length));
+
+            if (indice == numImg) {
+                indice++;
+                indice = indice % imagenes.length;//para que no se salga del rango
+                /*o con un if 
+                if(indice>=imagenes.length){
+                    indice=0;
+                }
+                */
+            }
+
+            numImg = indice;
+            imagen = document.getElementById("miImagen");
+            imagen.setAttribute("src", "imagenes/" + imagenes[indice]);
+            // tambien podemos usar la propiedad src directamente
+            //imagen.src = "imagenes/" + imagenes[indice];
+            // pero si queremos hacerlo en una sola linea sin crear la variable imagen podemos hacer:
+            //document.getElementById("miImagen").src = "imagenes/" + imagenes[indice];
+
+            //tambien se puede hacer con querySelector
+            //document.querySelector("img").src = "imagenes/" + imagenes[indice];
+
+        }
+        cambiarImagen()
+        setInterval(()=>cambiarImagen(), 5000); //cambia la imagen cada 5 segundos
+    </script>
+</body>
+
+</html>
