@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height:100px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:1em;
+            font-weight:bold;
+            border: solid black 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="capa1">Soy arrastable</div>
+    <div id="capa2">Soy el destino</div>
+
+    <script>
+        /*
+        Crea una aplicación que muestre dos capas del mismo tamaño concretamente 200 píxeles de
+        ancho por 100 de alto.
+        • La primera capa mostrará el texto "Soy arrastrable" y tendrá fondo amarillo y la segunda
+        muestra "Soy el destino" y tiene fondo blanco. Ambas dejan un borde de un píxel, negro.
+        • La aplicación permite arrastrar la primera sobre la segunda.
+        • Durante el arrastre, la primera capa se mostrará con una opacidad del 50%. Al arrastrar sobre
+        la segunda, esta (el destino) se muestra con fondo rojo. Al soltar en esa segunda capa, la pri­
+        mera desaparece y en la segunda aparecerá el texto "¡Lo has logrado!"-
+        */
+
+        let capa1 = document.getElementById('capa1');
+        let capa2 = document.getElementById('capa2');
+
+        // Estilos iniciales
+        capa1.style.background = 'yellow';
+        capa2.style.background = 'white';
+
+        // Hacer capa1 arrastrable
+        capa1.setAttribute('draggable', 'true');// Hacer la capa1 arrastrable
+
+        capa1.addEventListener('dragstart', function(e) {// Cuando se inicia el arrastre
+            capa1.style.opacity = '0.5';
+            e.dataTransfer.setData('text/plain', 'dragging');
+        });
+
+        capa1.addEventListener('dragend', function(e) {// Cuando se termina de arrastrar
+            capa1.style.opacity = '1';
+        });
+
+        capa2.addEventListener('dragover', function(e) {// Permitir soltar en capa2
+            e.preventDefault();
+        });
+
+        capa2.addEventListener('dragenter', function(e) {// Cuando el elemento arrastrable entra en capa2
+            capa2.style.background = 'red';
+        });
+
+        capa2.addEventListener('dragleave', function(e) {// Cuando el elemento arrastrable sale de capa2
+            capa2.style.background = 'white';
+        });
+
+        capa2.addEventListener('drop', function(e) {// Cuando se suelta el elemento arrastrable en capa2
+            e.preventDefault();
+            capa1.remove(); // Eliminar capa1
+            capa2.style.background = 'white';
+            capa2.textContent = '¡Lo has logrado!';
+        });
+    </script>
+</body>
+</html>

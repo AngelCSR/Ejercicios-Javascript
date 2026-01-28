@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Cargando...</h2>
+    <img src="https://pixabay.com/get/g48fdbbdc845ea19371b52053f52fb12707b2ef86937eec89c7cb331aba8509aa88595cc4ac46ff2a7d3afa5be73e99f5fc860ad669fdcb1ec9fd53bb635f5e8b_1920.jpg" alt="">
+    <img src="https://pixabay.com/get/g15f528996682d47610e6b66091107260af9387030652f70c84c19b14bda06475bfd3859a170b1b7030c70ea04a91054be0b9c50a5a229c68365999e159d9836a_1920.jpg" alt="">
+    <img src="gb7e360a4257c728d0519f0c92503c19037b50859e03a9e5b41035fe67973c59ef5312e16efb44f08e9f21686f75995f3651aca81fe2913337ea7c7379537545a_1920" alt="">
+    <img src="https://pixabay.com/get/g41ae74c6a253208b71ab1445aa894878e454df4f8d74af8b856690f8e46c38bcf5d9c6ac2310e815362c078908e411833a0b485876106eaf3a84bc9681ba73de_1920.jpg" alt="">
+    <img src="https://pixabay.com/get/gf1080bfe0bd3c9e83febc5af7a60cd1c652efecc167a482850a1e88b2d3dfc47cc87312784cae9225349d9ba52c5a5626aebe5b5a5b44e2157bacb776dc948d5_1920.jpg" alt="">
+    <img src="https://pixabay.com/get/gea36e6dfd28111ea5b4b0807c70dafcd091e870f108674ec3cb5178cfe771d5b3c1a369f51a7e97fdcdd955314dca45ee1d32868e316b18414bb09ef20690ba0_1920.jpg" alt="">
+   <script>
+        /*
+        Panel con el mensaje "cargando"
+        • rea una página que coja de Internet 10 imágenes de alta calidad
+        • Se mostrará un panel con el mensaje "Cargando..." durante la carga.
+        • El panel se retira automáticamente cuando se cargan todas las imágenes
+        */
+       let texto=document.querySelector("h2");
+       window.addEventListener("load",(ev)=>{
+        setTimeout(()=>{//espera 2 segundos para ver el mensaje para que si va demasiado rapido se vea
+            texto.innerText="";
+        },2000);     
+        
+       })
+
+    </script>
+</body>
+
+</html>
