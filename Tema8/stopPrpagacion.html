@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Pinta de rojo
+        <p>Pinta de verde</p>
+    </div>
+
+    <script>
+        let capa=document.querySelector("div");
+        let parrafo=document.querySelector("p");
+
+        capa.addEventListener("click",(ev)=>{
+            document.body.style.backgroundColor="red";
+            
+        },true);//El tercer parametro indica que el evento se captura en la fase de captura (true) o en la fase de burbuja (false). Por defecto es false
+        parrafo.addEventListener("click",(ev)=>{
+            document.body.style.backgroundColor="green";
+            //ev.stopPropagation();//Evita que el evento se propague a los elementos padres de esta forma al hacer click en el parrafo no se ejecuta el evento del div padre
+            
+        },true)
+    </script>
+</body>
+</html>

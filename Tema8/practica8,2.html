@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imagen {
+            background-color: black;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imagen">
+        <h1>Pulsa Alt + F12</h1>
+    </div>
+
+    <script>
+        /*
+        Crea una página web que tenga un texto que indique que al pulsar Alt+F12,
+        podremos colocar una imagen de fondo. El texto tiene que salir centrado.
+        La idea es que inicialmente aparezca una pantalla negra con el texto y hasta que el 
+        usuario no pulse esa tecla, la imagen no se muestre.
+        */
+        document.addEventListener("keydown", colocarImagen);
+        function colocarImagen(ev){
+
+            if(ev.altKey && ev.key==="F12"){
+                let divImagen=document.getElementById("imagen");
+                divImagen.style.backgroundImage="url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW91bnRhaW58ZW58MHx8MHx8fDA%3D&w=1000&q=80')";
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

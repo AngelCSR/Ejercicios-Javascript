@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #capa{
+            position: fixed;
+            left: 25%;
+            top: 25%;
+            width: 50%;
+            height: 50%;
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="capa"> </div>
+    
+    <script>
+        /*
+        • Crear una aplicación web que muestre una capa centrada que ocupe el 50% del ancho y el
+        alto de la ventana.
+        • Inicialmente la capa será blanca y solo se la verá el borde.
+        • Al arrimar el ratón se colorea de verde.
+        • Al hacer clic encima con el botón principal se colorea de rojo, pero solo mientras el botón
+        principal está abajo, si está arriba, entonces se quita el color rojo.
+        • Al hacer clic encima con el botón secundario ocurre lo mismo que en el caso anterior, pero se
+        muestra el color azul. No se mostrará en ningún caso el menú de contexto.
+        */
+
+        let capa=document.getElementById("capa");
+        capa.addEventListener("mousemove",()=>{
+            capa.style.backgroundColor="green";
+        });
+        capa.addEventListener("mouseleave",()=>{
+            capa.style.backgroundColor="white";
+        });
+        capa.addEventListener("mousedown",()=>{
+            capa.style.backgroundColor="red";
+        })
+       capa.addEventListener("mouseup",()=>{//al soltar el boton del raton
+            capa.style.backgroundColor="green";
+        })
+        capa.addEventListener("contextmenu",(ev)=>{
+            ev.preventDefault();
+            capa.style.backgroundColor="blue";
+            
+        });
+
+       
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="texto"></p>
+
+    <script>
+        document.addEventListener("keydown", (ev) => {
+            let p = document.getElementById("texto");
+
+            if (ev.key === " ") {
+                p.innerText += "Tecla pulsada: Espacio \n";
+            } else {
+                p.innerText += "Tecla pulsada : " + ev.key+" \n";
+            }
+        });
+
+        // Otra forma de hacerlo con funcion anonima
+        /*
+        document.addEventListener("keydown",function(ev){
+            let p=document.getElementById("texto");
+            p.innerText="Tecla pulsada: "+ev.key
+        });6i
+        */
+        // Forma con funcion nombrada
+        /*
+        document.addEventListener("keydown",teclaPulsada);
+        function teclaPulsada(ev){
+             let p=document.getElementById("texto");
+             p.innerText="Tecla pulsada: "+ev.key
+        }
+        */
+
+    </script>
+</body>
+
+</html>

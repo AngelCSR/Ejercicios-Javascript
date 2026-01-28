@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const datos=prompt("Introduce varios numerospor comas")
+         let arrayDatos=datos.split(",")
+      
+
+         
+         function mostrarNumeros(datos){
+
+               let Positivo=datos.filter(function(numero){
+            return numero>=0;//devuelve true o false, si es true se añade al nuevo array
+        });
+         let Negativo=datos.filter(function(numero){
+            return numero<0;
+        });
+
+         document.write("Positivos: "+Positivo+"<br>")
+          document.write("Negativos: "+Negativo)
+
+
+
+         }
+         mostrarNumeros(arrayDatos)
+
+    </script>
+</body>
+</html>

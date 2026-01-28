@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <button id="bt1">Pintar de rojo</button>
+        <button id="bt2">Tambien hace lo mismo pero con evento personalizado</button>
+    </p>
+    
+    <script>
+        //Crear un evento personalizado
+        let eventoPersonalizado=new Event("miEvento");
+
+        //Crear un listener para el evento personalizado
+        document.addEventListener("miEvento",()=>{
+            alert("Se ha lanzado el evento personalizado 'miEvento'");
+        });
+
+        //Despachar(lanzar) el evento personalizado
+        document.dispatchEvent(eventoPersonalizado);
+
+
+
+        let boton1=document.getElementById("bt1");
+        let boton2=document.getElementById("bt2");
+
+        boton1.addEventListener("click",()=>{
+            document.body.style.backgroundColor="red";
+        });
+        boton2.addEventListener("click",()=>{
+            //Crear y despachar el evento personalizado al hacer click en el boton2
+            
+            document.dispatchEvent(boton1.dispatchEvent(new Event("click") ));//Otra forma de lanzar el evento click del boton1 
+        });
+
+
+
+    </script>
+</body>
+</html>

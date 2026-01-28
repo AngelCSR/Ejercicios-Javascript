@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios de Expresiones Regulares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f7;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    section {
+      background: #ffffff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📘 Ejemplos de Expresiones Regulares en JavaScript</h1>
+<p>Cada ejercicio contiene: <strong>enunciado</strong> + <strong>expresión regular</strong>.
+Perfecto para practicar antes de un examen.</p>
+
+<section>
+  <h2>1. Comprobar si un texto contiene la palabra "hola"</h2>
+  <p><strong>Enunciado:</strong> Indicar si una cadena contiene la palabra hola, sin distinguir mayúsculas.</p>
+  <pre><code>/hola/i</code></pre>
+</section>
+
+<section>
+  <h2>2. Buscar todas las apariciones de una palabra</h2>
+  <p><strong>Enunciado:</strong> Encontrar todas las veces que aparece la palabra "mapa".</p>
+  <pre><code>/mapa/g</code></pre>
+</section>
+
+<section>
+  <h2>3. Comprobar si un texto empieza por una letra concreta</h2>
+  <p><strong>Enunciado:</strong> Verificar si una cadena empieza por la letra V.</p>
+  <pre><code>/^V/</code></pre>
+</section>
+
+<section>
+  <h2>4. Comprobar si un texto termina en una letra concreta</h2>
+  <p><strong>Enunciado:</strong> Verificar si una cadena termina en la letra m.</p>
+  <pre><code>/m$/</code></pre>
+</section>
+
+<section>
+  <h2>5. Palabras con comodines</h2>
+  <p><strong>Enunciado:</strong> Buscar palabras que empiecen por G, tengan dos caracteres cualquiera y terminen en BA.</p>
+  <pre><code>/G..BA/</code></pre>
+</section>
+
+<section>
+  <h2>6. Buscar puntos reales</h2>
+  <p><strong>Enunciado:</strong> Encontrar todos los puntos (.) en un texto.</p>
+  <pre><code>/\./g</code></pre>
+</section>
+
+<section>
+  <h2>7. Buscar texto entre espacios</h2>
+  <p><strong>Enunciado:</strong> Encontrar palabras de tres caracteres entre espacios.</p>
+  <pre><code>/\s...\s/</code></pre>
+</section>
+
+<section>
+  <h2>8. Letras minúsculas seguidas de caracteres</h2>
+  <p><strong>Enunciado:</strong> Buscar una letra minúscula seguida de tres caracteres cualquiera.</p>
+  <pre><code>/[a-z].../</code></pre>
+</section>
+
+<section>
+  <h2>9. Letras concretas</h2>
+  <p><strong>Enunciado:</strong> Buscar palabras que empiecen por c, d o t.</p>
+  <pre><code>/[cdt]/</code></pre>
+</section>
+
+<section>
+  <h2>10. Negación de caracteres</h2>
+  <p><strong>Enunciado:</strong> Buscar caracteres que no sean c, d o t.</p>
+  <pre><code>/[^cdt]/</code></pre>
+</section>
+
+<section>
+  <h2>11. Buscar palabras concretas</h2>
+  <p><strong>Enunciado:</strong> Comprobar si el texto contiene hola, adios o hello.</p>
+  <pre><code>/(hola|adios|hello)/i</code></pre>
+</section>
+
+<section>
+  <h2>12. Repetición exacta</h2>
+  <p><strong>Enunciado:</strong> Buscar cuatro letras "a" seguidas.</p>
+  <pre><code>/a{4}/i</code></pre>
+</section>
+
+<section>
+  <h2>13. Repetición mínima</h2>
+  <p><strong>Enunciado:</strong> Buscar cuatro o más letras "a" seguidas.</p>
+  <pre><code>/a{4,}/i</code></pre>
+</section>
+
+<section>
+  <h2>14. Repetición en rango</h2>
+  <p><strong>Enunciado:</strong> Buscar entre dos y cinco letras "a" seguidas.</p>
+  <pre><code>/a{2,5}/i</code></pre>
+</section>
+
+<section>
+  <h2>15. Una o más repeticiones</h2>
+  <p><strong>Enunciado:</strong> Buscar una o más letras m seguidas.</p>
+  <pre><code>/m+/i</code></pre>
+</section>
+
+<section>
+  <h2>16. Cero o más repeticiones</h2>
+  <p><strong>Enunciado:</strong> Buscar cero o más letras m seguidas.</p>
+  <pre><code>/m*/i</code></pre>
+</section>
+
+<section>
+  <h2>17. Carácter opcional</h2>
+  <p><strong>Enunciado:</strong> Buscar palabras que puedan empezar o no por la letra e.</p>
+  <pre><code>/e?s/i</code></pre>
+</section>
+
+<section>
+  <h2>18. Agrupaciones complejas</h2>
+  <p><strong>Enunciado:</strong> Buscar 3 vocales seguidas de 2 números, repetido una o más veces.</p>
+  <pre><code>/([aeiou]{3}[0-9]{2})+/</code></pre>
+</section>
+
+<section>
+  <h2>19. Caracteres alfanuméricos</h2>
+  <p><strong>Enunciado:</strong> Buscar 5 caracteres alfanuméricos seguidos.</p>
+  <pre><code>/\w{5}/</code></pre>
+</section>
+
+<section>
+  <h2>20. Caracteres NO alfanuméricos</h2>
+  <p><strong>Enunciado:</strong> Buscar 6 caracteres que no sean letras ni números.</p>
+  <pre><code>/\W{6}/</code></pre>
+</section>
+
+<section>
+  <h2>21. Dígitos</h2>
+  <p><strong>Enunciado:</strong> Buscar un número de 5 cifras.</p>
+  <pre><code>/\d{5}/</code></pre>
+</section>
+
+<section>
+  <h2>22. No dígitos</h2>
+  <p><strong>Enunciado:</strong> Buscar texto sin números.</p>
+  <pre><code>/\D+/</code></pre>
+</section>
+
+<section>
+  <h2>23. No espacios</h2>
+  <p><strong>Enunciado:</strong> Buscar texto que no contenga espacios.</p>
+  <pre><code>/\S+/</code></pre>
+</section>
+
+<section>
+  <h2>24. Fecha</h2>
+  <p><strong>Enunciado:</strong> Validar una fecha en formato dd/mm/yyyy.</p>
+  <pre><code>/^([0]?[1-9]|[12]\d|3[01])[\/\-](0?[1-9]|1[0-2])[\/\-]\d{4}$/</code></pre>
+</section>
+
+<section>
+  <h2>25. Email</h2>
+  <p><strong>Enunciado:</strong> Validar un correo electrónico.</p>
+  <pre><code>/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/</code></pre>
+</section>
+
+<section>
+  <h2>26. Teléfono</h2>
+  <p><strong>Enunciado:</strong> Validar un número de teléfono español.</p>
+  <pre><code>/^[6-9]\d{8}$/</code></pre>
+</section>
+
+<section>
+  <h2>27. Contraseña segura</h2>
+  <p><strong>Enunciado:</strong> Validar una contraseña con mínimo 8 caracteres, una mayúscula y un número.</p>
+  <pre><code>/^(?=.*[A-Z])(?=.*\d).{8,}$/</code></pre>
+</section>
+
+<section>
+  <h2>28. Número entero</h2>
+  <p><strong>Enunciado:</strong> Validar un número entero positivo o negativo.</p>
+  <pre><code>/^-?\d+$/</code></pre>
+</section>
+
+<section>
+  <h2>29. Código postal</h2>
+  <p><strong>Enunciado:</strong> Validar un código postal de 5 cifras.</p>
+  <pre><code>/^\d{5}$/</code></pre>
+</section>
+
+<section>
+  <h2>30. DNI</h2>
+  <p><strong>Enunciado:</strong> Validar un DNI español (8 números seguidos de una letra).</p>
+  <pre><code>/^\d{8}[A-Za-z]$/</code></pre>
+</section>
+
+
+</body>
+</html>

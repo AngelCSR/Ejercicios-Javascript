@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Velocidad: 0</h1>
+
+    <script>
+        /*/*
+        Control de velocidad
+        • Crea una aplicación web que muestre el texto: Velocidad 0.
+        
+        • Si pulsamos la tecla de la flecha hacia arriba del teclado, 
+        la velocidad se incremente en uno.
+        
+        • Si es la flecha hacia abajo, la velocidad baja en uno.
+        
+        • La velocidad no puede sobrepasar los 120 ni descender de cero.
+        
+        • Experimenta con los eventos de teclado para investigar cuál es el más apropiado en este caso.
+        */
+       let texto =document.querySelector("h1");
+       let vel=0
+        window.addEventListener("keydown",(ev)=>{// keydown es mejor que keyup porque asi no hay que esperar a soltar la tecla para que se ejecute el evento y keypress esta obsoleto
+            if(ev.key=="ArrowUp"){
+                vel++;
+                if(vel>120){
+                    vel=120;
+                }
+                texto.innerText="Velocidad: "+vel;
+
+            }else if(ev.key=="ArrowDown"){
+                vel--;
+                if(vel<0){
+                    vel=0;
+                }
+                texto.innerText="Velocidad: "+vel;
+                
+                }
+                
+               
+            
+        });
+       
+
+    </script>
+</body>
+
+</html>

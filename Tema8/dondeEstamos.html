@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 100%; height: 100%;">
+        <h1>Coordenadas del raton(click y mouseover)</h1>
+        <p id="horizontal">Coordenada X: </p>
+        <p id="vertical">Coordenada Y: </p>
+     
+        
+    </div>
+    
+
+    <script>
+
+        let hor=document.getElementById("horizontal");
+        let ver=document.getElementById("vertical");
+
+        document.addEventListener("click",coordenadas);
+        document.addEventListener("mousemove",coordenadas);//mouseover tambien vale pero en este caso no va tan bien como mousemove
+        document.addEventListener("contextmenu",function(ev){
+            ev.preventDefault();//para que no salga el menu contextual al hacer click derecho
+        });
+        function coordenadas(event){
+            hor.innerText="Coordenada X: "+event.clientX+", Pantalla x: "+event.screenX ;
+            ver.innerText="Coordenada Y: "+event.clientY+", Pantalla y: "+event.screenY ;
+            
+        }
+        
+    </script>
+</body>
+</html>

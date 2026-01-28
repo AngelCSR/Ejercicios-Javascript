@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fechaDad=prompt("Dime una fecha (dd-mm-aaaa)")
+        datos=fechaDad.split("-")
+        console.log(datos)
+        let dian=datos[0]
+        let mes=datos[1]
+        let anio=parseInt(datos[2])
+       
+        
+       
+         let dias=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+        
+
+        for(let i=0;i<4;i++){
+            anio+=1
+             let fecha=new Date(anio,mes,dian)
+              let dia=fecha.getDay()
+             document.write("El dia"+dian+" del mes "+mes+" año"+anio+" empezo el dia: "+dias[dia]+"<br>")
+             console.log(dias[dia])
+
+        }
+
+       
+        
+
+       
+        
+    </script>
+</body>
+</html>

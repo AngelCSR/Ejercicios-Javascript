@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Evitar la accion por defecto de un evento -->
+    <h1>Prevenir accion por defecto</h1>
+    <p>Haz click en el enlace de abajo para ver que pasa</p>
+    <a id="link" href="https://www.google.com" target="_blank">Enlace a Google</a>
+
+    <script>
+        let enlace=document.getElementById("link");
+
+        enlace.addEventListener("click",(ev)=>{
+            if(confirm("¿Quieres abrir Google?")){
+                return; //Si el usuario confirma, se permite la accion por defecto (abrir el enlace)
+                //tambien podemos ponerlo con location.href="https://www.google.com"
+            }
+            ev.preventDefault()
+            alert("Has hecho click en el enlace, pero no se ha abierto Google porque hemos prevenido la accion por defecto del evento");
+        })
+        /*
+        tambien se puede hacer 
+         enlace.addEventListener("click",(ev)=>{
+            if(!confirm("¿Quieres abrir Google?")){
+                ev.preventDefault()
+                alert("Has hecho click en el enlace, pero no se ha abierto Google porque hemos prevenido la accion por defecto del evento");    
+            }
+        */
+    </script>
+
+</body>
+</html>

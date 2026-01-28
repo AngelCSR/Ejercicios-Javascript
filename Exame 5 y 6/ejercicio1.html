@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              /*Funcion a la que le pasas una seie de parametros indeterminados y te los muestra uno por uno en la consola*/
+        let datos=prompt("Introduce varios parametros separados por comas")
+         let arrayDatos=datos.split(",")
+         console.log(arrayDatos)
+          let expr1 = /^\d/
+        let lineaNum=[]
+        let lineaPal=[]
+         /*
+         for (let i=0;i<arrayDatos.length;i++){
+                if(expr1.test(arrayDatos[i])){
+                    
+                    lineaNum.push(arrayDatos[i])
+
+                }else{
+                    lineaPal.push(arrayDatos[i])
+                }
+
+
+            }
+             console.log(lineaNum)
+              console.log(lineaPal)*/
+       
+        
+        
+
+        function mostrarParametros(parametros){
+             for (let i=0;i<arrayDatos.length;i++){
+                if(expr1.test(arrayDatos[i])){
+                    
+                    lineaNum.push(arrayDatos[i])
+
+                }else{
+                    lineaPal.push(arrayDatos[i])
+                }
+
+
+            }
+            document.write(lineaNum+"<br>")
+            document.write(lineaPal)
+        }
+        
+        
+        mostrarParametros(...arrayDatos)
+    </script>
+</body>
+</html>

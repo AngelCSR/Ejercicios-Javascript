@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <p>
+            <button>Clic aqui</button>
+        </p>
+    </div>
+
+    <script>
+        let capa = document.querySelector("div")
+        let parrafo = document.querySelector("p")
+        let boton = document.querySelector("button")
+
+        /* si pones un parametro false en el addEventListener hace burbuja y lo muestra de abajo a arriba
+       si pones true hace captura y lo muestra al reves:
+
+       capa.addEventListener("click",()=>console.log("Has hecho click en la capa"),true)
+       parrafo.addEventListener("click",()=>console.log("Has hecho click en el parrafo"),true)
+       boton.addEventListener("click",()=>console.log("Has hecho click en el boton"),true)
+       */
+/*
+        capa.addEventListener("click", () => console.log("Has hecho click en la capa"))
+        parrafo.addEventListener("click", () => console.log("Has hecho click en el parrafo"))
+        boton.addEventListener("click", () => console.log("Has hecho click en el boton"))
+
+        */
+
+        function mensaje() {
+            alert("!Me has hecho clic!")
+            p.removeEventListener("click", mensaje);//se quita el evento despues de hacer clic una vez por lo que no se puede volver a hacer clic
+        }
+        let p = document.querySelector("p");
+        p.addEventListener("click", mensaje);
+        
+
+
+    </script>
+
+</body>
+
+</html>

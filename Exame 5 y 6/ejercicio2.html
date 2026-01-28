@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const datos=prompt("Introduce varios numerospor comas")
+         let arrayDatos=datos.split(",")
+
+         
+         function sumaNumeros(numeros){
+             let suma=numeros.reduce((acu,valor)=>parseInt(acu)+parseInt(valor),0)
+             document.write("Suma: "+suma)
+
+         }
+         
+         sumaNumeros(arrayDatos)
+    </script>
+</body>
+</html>
