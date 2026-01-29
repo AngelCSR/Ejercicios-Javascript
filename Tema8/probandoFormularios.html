@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="usuario">Nombre:</label>
+        <input type="text" id="usuario" name="usuario"  placeholder="Nombre de usuario">
+        <label for="contrasena"></label>
+        <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña">
+        <button name="Enviar" type="submit">Enviar</button>
+        <button name="Borrar" type="reset">Borrar</button>
+    </form>
+    <div id="mensaje"></div>
+    <script>
+        let formulario=document.forms[0];//solo hay un formulario, tambien se puede usar document.getElementById("idFormulario")
+        let mensaje=document.getElementById("mensaje");
+        let tUsuario=document.getElementById("usuario");
+        tUsuario.focus()//pone el foco en el campo usuario al cargar la pagina
+
+        formulario.addEventListener("submit",(e)=>{
+            let exp1=/^[A-Za-z]{6,}$/;//expresion regular para validar que el nombre tiene al menos 6 letras y solo letras
+            if(!exp1.test(tUsuario.getAttribute("value"))){//tambien puede usarse tUsuario.value
+                e.preventDefault();//evita que se envie el formulario
+                mensaje.innerText="El nombre debe tener al menos 6 letras y solo letras.";
+                mensaje.style.color="red";
+            }
+        })
+        formulario.addEventListener("reset",(e)=>{
+            if(!confirm("¿Seguro que quieres borrar el formulario?")){
+                e.preventDefault();//evita que se borre el formulario
+            }
+            mensaje.innerText="";//borra el mensaje
+        });
+        formulario.addEventListener("focus",(e)=>{
+            
+            mensaje.innerText="El foco está en el campo: "+e.target.name;
+        },true);//el tercer parametro true indica que el evento se captura en la fase de captura
+
+        
+    </script>
+</body>
+</html>

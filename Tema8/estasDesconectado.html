@@ -10,10 +10,10 @@
 
     <script>
         let texto=document.querySelector("h1");
-        window.addEventListener("online",()=>{
+        window.addEventListener("online",()=>{//cuando se conecta
             texto.textContent="Con conexión";
         });
-        window.addEventListener("offline",()=>{
+        window.addEventListener("offline",()=>{//cuando se desconecta
             texto.textContent="Desconectado";
         });
     </script>

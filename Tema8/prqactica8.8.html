@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .encabezado {
+            background-color: #c17533; /* Marrón/naranja */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contenedor-formulario {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contenedor-formulario img {
+            width: 300px;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        form {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+    
+    </div>
+     <div class="contenedor">
+        <div class="encabezado">INFORME INCIDENCIA</div>
+        <div class="contenedor-formulario">
+            <img src="./ciudadreal.jpeg" alt="">
+            <form>
+                <label for="tipo-incidencia">Tipo de incidencia</label>
+                <select name="ciudades" id="ciudades">
+            <option value="c1" selected>Ciudad Real</option>
+            <option value="c2">Puertollano</option>
+            <option value="c3">Valdepeñas</option>
+            <option value="c4">Tomelloso</option>
+            <option value="c5">Álcazar de San Juan</option>
+        </select>
+
+                <label for="numero-serie">Número de serie</label>
+                <input type="text" id="numero-serie" name="numero-serie" placeholder="Ingresa número de serie">
+
+                <button id="mostrar" type="button">Mostrar Descripción</button>
+                <button type="submit">Enviar datos</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        let opciones=document.getElementById("ciudades");
+        opciones.addEventListener("change",()=>{
+            let imagen=document.querySelector("img");
+            switch(opciones.value){
+                case "c1":
+                    imagen.src="./ciudadreal.jpeg";
+                    break;
+                case "c2":
+                    imagen.src="./puertollano.jpeg";
+                    break;
+                case "c3":
+                    imagen.src="./valdepeñas.jpeg";
+                    break;
+                case "c4":
+                    imagen.src="./tomelloso.jpeg";
+                    break;
+                case "c5":
+                    imagen.src="./alcazar.jpeg";
+                    break;
+            }
+        });
+        let mostrar=document.getElementById("mostrar");
+        mostrar.addEventListener("click",()=>{
+            //creo un cuadro de texto para poner una descripcion con .createElement
+            let descripcion=document.createElement("textarea");
+            descripcion.rows=4;//numero de filas
+            descripcion.cols=50;//numero de columnas
+            descripcion.placeholder="Escribe una descripción de la incidencia";
+            //añado el cuadro de texto al formulario
+            mostrar.insertAdjacentElement("afterend",descripcion);
+            //deshabilito el boton mostrar
+            mostrar.disabled=true;
+        });
+          
+
+    </script>
+</body>
+</html>
