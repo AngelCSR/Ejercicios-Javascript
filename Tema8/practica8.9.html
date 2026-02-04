@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+
+            margin: 0;
+        }
+
+        div {
+
+            background-color: #fff;
+
+        }
+
+        #div2 {
+            display: flex;
+            justify-content: space-around;
+            background-color: gray;
+            color: white;
+
+        }
+
+        #contenido {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        #titulo {
+            background-color: #070707;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+
+        }
+         table {
+            
+            margin: 10px;
+            border: 2px solid black;
+        }
+        td {
+            padding: 10px 20px;
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            border: 1px solid black;
+            padding: 10px;
+            padding: 10px 20px;
+    margin: 5px; /* espacio alrededor de cada celda */
+        }
+         .aplicacion { background-color: #6AA84F; }
+        .presentacion { background-color: #6AA84F; }
+        .sesion { background-color: #6AA84F; }
+        .transporte { background-color: #6D9EEB; }
+        .red { background-color: #C27BA0; }
+        .internet { background-color: #C27BA0; }
+        .enlace { background-color: #A64D79; }
+        .interfaz { background-color: #A64D79; }
+        .fisica { background-color: #A64D79; }
+
+        .velo {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="titulo">Niveles OSIyTCP/IP</h1>
+
+    </div>
+    <div id="div2">
+        <h2></h2>
+        <h2>Modelo OSi</h2>
+        <h2>Modelo TCP/IP</h2>
+
+    </div>
+    <div id="contenido">
+        <div id="botones">
+            <!--Pnemos un chexbox  -->
+            <input type="checkbox" id="osic" name="osic" value="osic" >
+            <label for="osic">Modelo osi</label><br>
+            <input type="checkbox" id="tcpc" name="tcpc" value="tcpc" >
+            <label for="tcpc">Modelo TCP/IP</label><br><br><br><br>
+             <button id="ocultarAmbos">Ocultar ambas</button><br><br><br>
+            <button id="ocultarTodo">Ocultar todo</button>
+
+
+        </div>
+
+        <div id="osi" >
+            <table id="tablaOsi">
+                <tr>
+                    <td class="aplicacion">Aplicación</td>
+                </tr>
+                <tr>
+                    <td class="presentacion">Presentación</td>
+                </tr>
+                <tr>
+                    <td class="sesion">Sesión</td>
+                </tr>
+                <tr>
+                    <td class="transporte">Transporte</td>
+                </tr>
+                <tr>
+                    <td class="red">Red</td>
+                </tr>
+                <tr>
+                    <td class="enlace">Enlace a datos</td>
+                </tr>
+                <tr>
+                    <td class="fisica">Física</td>
+                </tr>
+            </table>
+        </div>
+        <div id="tcp">
+            <table id="tablaTcp" class="velo" >
+                <tr >
+                    <td class="aplicacion" >Aplicación</td>
+                </tr>
+                <tr>
+                    <td class="transporte">Transporte</td>
+                </tr>
+                <tr>
+                    <td class="internet">Internet</td>
+                </tr>
+                <tr>
+                    <td class="interfaz">Interfaz de red</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let osi=document.getElementById("osi");
+        let tcp=document.getElementById("tcp");
+        let checkboxOsi=document.getElementById("osic");
+        let checkboxTcp=document.getElementById("tcpc");
+        let ocultarAmbos=document.getElementById("ocultarAmbos");
+        let ocultarTodo=document.getElementById("ocultarTodo");
+        let tablaOsi=document.getElementById("tablaOsi");
+        let tablaTcp=document.getElementById("tablaTcp");
+        let titulo=document.getElementById("titulo");
+        let div2=document.getElementById("div2");
+
+        
+        checkboxOsi.addEventListener("click",()=>{
+            if(checkboxOsi.checked){
+                tablaOsi.style.display="block";
+            }else{
+                tablaOsi.style.display="none";
+            }
+        });
+       /* checkboxTcp.addEventListener("change",()=>{
+            if(checkboxTcp.checked){
+                tablaTcp.classList.remove("velo");
+            }else{
+                //cambiamos le añadimos la clase css velo
+                tablaTcp.classList.add("velo");
+            }
+        });
+        */
+        checkboxTcp.addEventListener("change",()=>{
+           tablaTcp.classList.toggle("velo");//toggle añade o quita la clase segun si la tiene o no
+        });
+        ocultarAmbos.addEventListener("click",()=>{
+            tablaOsi.style.display="none";
+            tablaTcp.classList.add("velo");
+            checkboxOsi.checked=false;
+            checkboxTcp.checked=false;
+        });
+        ocultarTodo.addEventListener("click",()=>{
+            tablaOsi.style.display="none";
+            tablaTcp.classList.add("velo");
+            titulo.style.display="none";
+            div2.style.display="none";
+            checkboxOsi.checked=false;
+            checkboxTcp.checked=false;
+            ocultarAmbos.style.display="none";
+            ocultarTodo.style.display="none";
+        });
+
+        
+    </script>
+</body>
+
+</html>

@@ -129,7 +129,9 @@
             descripcion.cols=50;//numero de columnas
             descripcion.placeholder="Escribe una descripción de la incidencia";
             //añado el cuadro de texto al formulario
-            mostrar.insertAdjacentElement("afterend",descripcion);
+            mostrar.insertAdjacentElement("afterend",descripcion);//añado despues del boton mostrar
+            
+            
             //deshabilito el boton mostrar
             mostrar.disabled=true;
         });
