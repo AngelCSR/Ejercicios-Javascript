@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>La poesia del dia</h1>
+        <main>
+            <pre>
+
+            </pre>
+
+            <p id="p1"></p>
+            <p id="p2"></p>
+            <p id="p4"></p>
+            <p id="p5"></p>
+            <p id="p6"></p>
+            <p id="p7"></p>
+            <p id="p8"></p>
+
+        </main>
+        <div id="error"></div>
+    </header>
+    <script>
+        let pre = document.querySelector("pre")
+        let capaError = document.getElementById("error")
+        let p1 = document.getElementById("p1") 
+        let p2 = document.getElementById("p2")
+        let p4 = document.getElementById("p4")
+         let p5 = document.getElementById("p5") 
+         let p6 = document.getElementById("p6") 
+         let p7 = document.getElementById("p7") 
+         let p8 = document.getElementById("p8")
+
+         fetch("192.168.21.5/texto.txt")
+         .then(respuesta => respuesta.text()) 
+         .then(texto => p1.innerHTML = texto) 
+         .catch(error => p1.innerText = "la conexion falla");
+
+        fetch("poesia.txt")
+            .then(respuesta => respuesta.text())
+            .then(texto => pre.innerHTML = texto)
+            .catch(error => { capaError.innerText = error });
+    </script>
+</body>
+
+</html>

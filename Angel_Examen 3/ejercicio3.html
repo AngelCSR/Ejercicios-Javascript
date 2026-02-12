@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .velo {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="velo" id="formulario" action="">
+        <label for="text">Nombre:</label>
+        <input type="text" id="text" name="text" placeholder="Nombre">
+        <label for="text1">Nombre:</label>
+        <input type="text1" id="text1" name="text1" placeholder="Valor">
+
+
+        <button type="button" onclick="ponerCookies()">Añadir</button>
+    </form>
+    <button onclick=" console.log(document.cookie)">Mostrar cookies</button>
+    <button id="add" onclick="">Añadir cookies</button>
+    <button onclick="borrarCookies()">Borrar Cookies</button>
+    <script>
+
+        document.cookie = "Clave" + " = " + "Angel"
+        document.cookie = "Valor " + " = " + "Campo"  
+        let nom = document.getElementById("text")
+        let val = document.getElementById("text1")
+        function ponerCookies() {
+            let nombre = nom.value
+            let valo = val.value
+
+            document.cookie += "Clave = " + nombre// Esto crea una cookie llamada nombre con el valor introducido por el usuario
+            document.cookie += "Valor" + " = " + valo // Esto crea una cookie llamada apellidos con el valor apellido introducido por el usuario
+            //console.log(document.cookie)// Muestra todas las cookies en formato clave=valor separadas por ;
+
+        }
+        let aniade = document.getElementById("add")
+        let fc = document.getElementById("formulario")  
+        aniade.addEventListener("click", () => {
+
+            fc.classList.remove("velo");
+        })
+
+        function borrarCookies() {
+            let hoy = new Date();
+            document.cookie = "Clave = ; expires = " + hoy.toUTCString() // Esto borra la cookie nombre
+            document.cookie = "Valor = ; expires = " + '' + hoy.toUTCString() // Esto borra la cookie valor
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="mostrar" type="button">Mostrar </button>
+    <div id=""></div>
+    <script>
+
+        let di = document.querySelector("div")
+        let mostrar = document.getElementById("mostrar");
+        mostrar.addEventListener("click", () => {
+            
+            let descripcion = document.createElement("textarea");
+            descripcion.rows = 2;//numero de filas
+            descripcion.cols = 10;//numero de columnas
+            descripcion.placeholder = "Escribe un numero";
+            //añado el cuadro de texto al div
+
+            di.insertAdjacentElement("afterend", descripcion);//añado despues del boton mostrar
+            let boton1 = document.createElement("button");
+            boton1.innerText = "añadir"
+            di.appendChild(boton1)
+            boton1.addEventListener("click", () => {
+                let numero = parseInt(descripcion.value)
+
+                let alarma1 = setTimeout(() => {
+                    let p = document.createElement("p")
+
+                    p.textContent = "Alarma 1 segundos " + numero + " quedan " + (numero - 1)
+                    di.appendChild(p)
+
+                }, numero * 1000)
+
+                boton1.disabled = true;
+
+                let cancelarAlarma = document.createElement("button")
+                cancelarAlarma.innerText = "Cancelar alarma"
+                di.appendChild(cancelarAlarma)
+                cancelarAlarma.addEventListener("click", () => {
+                    clearTimeout(alarma1)
+                    cancelarAlarma.disabled = true;
+                    p.textContent = "Alarma cancelada"
+                })
+            })
+        })
+
+
+        
+        
+        
+        /*
+        let di = document.querySelector("div")
+
+        let mostrar = document.getElementById("mostrar");
+        mostrar.addEventListener("click", () => {
+
+
+            
+            let descripcion = document.createElement("textarea");
+            descripcion.rows = 2;//numero de filas
+            descripcion.cols = 10;//numero de columnas
+            descripcion.placeholder = "Escribe un numero";
+            //añado el cuadro de texto al formulario
+
+            di.insertAdjacentElement("afterend", descripcion);//añado despues del boton mostrar
+            let boton1 = document.createElement("button");
+            boton1.innerText = "añadir"
+            di.appendChild(boton1)
+            boton1.addEventListener("click",()=>{
+                let numero=parseInt(descripcion)
+
+                let alarma1=setTimeout(()=>{
+                    let p=document.createElement("p")
+
+                    p.textContent="Alarma 1 segundos "+ numero+ "quedan"+numero-1
+                    di.appendChild(p)
+                    
+                },numero)
+
+                boton1.disabled = true;
+            })
+            
+
+
+            //deshabilito el boton mostrar
+            mostrar.disabled = true;
+        });/**/
+
+            </script>
+</body>
+
+</html>

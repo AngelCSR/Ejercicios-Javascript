@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form  action="">
+        <label for="text">Texto:</label>
+        <input type="text" id="text" name="text" placeholder="texto">
+        
+        <button type="button" onclick="aniade()">Añadir</button>
+    </form>
+    <h1 id="h"></h1>
+
+    <script>
+        let formulario=document.forms[0];
+        let frases = [
+            "frase 1",
+            "frase 2",
+            "frase 3",
+            "frase 4",
+            "frase 5"
+
+        ]
+        
+        
+        let i = 0
+        let linea = document.getElementById("h")
+        let nuevaFrase=document.getElementById("text")
+        let f
+          
+        console.log(frases)
+        console.log(f)
+        function aniade(){
+
+             f=nuevaFrase.value
+            console.log(f)
+             frases.push(f);//añade un elemento al final del array
+              console.log(frases)
+
+
+        }
+
+        
+
+
+        intervalo=setInterval(() => {
+            
+                        
+            linea.innerText = frases[i]
+            i++
+            if(i>frases.length){
+                i=0
+                 linea.innerText = frases[i]
+                i++
+            }
+            
+        },1000)
+
+        
+      
+
+    </script>
+</body>
+
+</html>

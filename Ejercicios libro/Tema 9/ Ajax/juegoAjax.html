@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas</title>
+</head>
+<body>
+    
+    <button id="btn2">Anterior</button>
+    <button id="btn1">Siguiente</button>
+
+    <h1 id="pregunta"></h1>
+    <button id="op1"></button><br><br>
+    <button id="op2"></button><br><br>
+    <button id="op3"></button><br><br>
+    <button id="op4"></button><br><br>
+     <p id="resultado" style="font-weight:bold;"></p>
+
+    <script>
+        let bt1 = document.getElementById("btn1")
+        let bt2 = document.getElementById("btn2")
+
+        let preguntaEl = document.getElementById("pregunta")
+        let op1 = document.getElementById("op1")
+        let op2 = document.getElementById("op2")
+        let op3 = document.getElementById("op3")
+        let op4 = document.getElementById("op4")
+        let resultado = document.getElementById("resultado")
+
+        let preguntas = ""
+        let preguntaActual = -1
+
+        fetch("juegoAjas.json")
+            .then(respuesta => respuesta.json())
+            .then(datos => {
+                preguntas = datos[0].preguntas
+                // Mostrar primera pregunta al cargar
+                preguntaActual = 0
+                preguntaEl.innerText = preguntas[preguntaActual].pregunta
+                op1.innerText = preguntas[preguntaActual].respuestas[0]
+                op2.innerText = preguntas[preguntaActual].respuestas[1]
+                op3.innerText = preguntas[preguntaActual].respuestas[2]
+                op4.innerText = preguntas[preguntaActual].respuestas[3]
+            })
+
+        bt1.addEventListener("click", () => {
+            if(preguntaActual < preguntas.length - 1){
+                preguntaActual++
+                preguntaEl.innerText = preguntas[preguntaActual].pregunta
+                op1.innerText = preguntas[preguntaActual].respuestas[0]
+                op2.innerText = preguntas[preguntaActual].respuestas[1]
+                op3.innerText = preguntas[preguntaActual].respuestas[2]
+                op4.innerText = preguntas[preguntaActual].respuestas[3]
+                 resultado.innerText = "" // limpiar resultado
+            }
+        })
+
+        bt2.addEventListener("click", () => {
+            if(preguntaActual > 0){
+                preguntaActual--
+                preguntaEl.innerText = preguntas[preguntaActual].pregunta
+                op1.innerText = preguntas[preguntaActual].respuestas[0]
+                op2.innerText = preguntas[preguntaActual].respuestas[1]
+                op3.innerText = preguntas[preguntaActual].respuestas[2]
+                op4.innerText = preguntas[preguntaActual].respuestas[3]
+                 resultado.innerText = "" // limpiar resultado
+            }
+        })
+
+         // Función para revisar respuesta
+        function revisarRespuesta(e) {
+            let seleccion = e.target.innerText
+            let correcta = preguntas[preguntaActual].correcta
+            if(seleccion === correcta){
+                resultado.innerText = "¡Correcto!"
+                resultado.style.color = "green"
+            } else {
+                resultado.innerText = "Incorrecto. La respuesta correcta es: " + correcta
+                resultado.style.color = "red"
+                
+            }
+        }
+        // Asignar evento a los botones de respuesta
+        op1.addEventListener("click", revisarRespuesta)
+        op2.addEventListener("click", revisarRespuesta)
+        op3.addEventListener("click", revisarRespuesta)
+        op4.addEventListener("click", revisarRespuesta)
+    </script>
+</body>
+</html>

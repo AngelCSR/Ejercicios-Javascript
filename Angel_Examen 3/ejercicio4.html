@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         document.addEventListener("keydown", colocarImagen);
+        const provincias = [
+            { nombre: "Madrid", pueblos: ["Alcalá", "Getafe", "Leganés", "Móstoles", "Fuenlabrada"] },
+            { nombre: "Barcelona", pueblos: ["Badalona", "Hospitalet", "Sabadell", "Terrassa", "Mataró"] },
+            { nombre: "Valencia", pueblos: ["Torrent", "Gandía", "Paterna", "Sagunto", "Alzira"] },
+            { nombre: "Sevilla", pueblos: ["Dos Hermanas", "Alcalá", "Utrera", "Coria", "Carmona"] },
+            { nombre: "Zaragoza", pueblos: ["Calatayud", "Ejea", "Caspe", "Tarazona", "Alagón"] }
+        ];
+
+        let seleccionada = 0;
+
+        // Crear contenedor de provincias
+        const provinciasDiv = document.createElement("div");
+        provinciasDiv.style.display = "flex";
+        provinciasDiv.style.gap = "10px";
+        provinciasDiv.id = "provincias";
+        document.body.insertBefore(provinciasDiv, document.body.firstChild);
+
+        // Crear contenedor de pueblos
+        const pueblosDiv = document.createElement("div");
+        pueblosDiv.id = "pueblos";
+        pueblosDiv.style.marginTop = "30px";
+        document.body.appendChild(pueblosDiv);
+
+
+
+        function renderPueblos() {
+            pueblosDiv.innerHTML = "";
+            const ul = document.createElement("ul");
+            provincias[seleccionada].pueblos.forEach(pueblo => {
+                const li = document.createElement("li");
+                li.textContent = pueblo;
+                ul.appendChild(li);
+            });
+            pueblosDiv.appendChild(ul);
+        }
+
+        document.addEventListener("keydown", (ev) => {
+            if (ev.key === "ArrowRight") {
+                seleccionada = (seleccionada + 1) % provincias.length;
+                renderProvincias();
+                renderPueblos();
+            } else if (ev.key === "ArrowLeft") {
+                seleccionada = (seleccionada - 1 + provincias.length) % provincias.length;
+                renderProvincias();
+                renderPueblos();
+            }
+        });     
+    </script>
+</body>
+</html>
